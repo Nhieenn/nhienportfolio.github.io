@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,477 +9,431 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Geist"', 'system-ui', 'sans-serif'],
-            mono: ['"Geist Mono"', 'monospace'],
-          },
-          colors: {
-            app: {
-              bg: '#0a0a0c',
-              surface: '#111114',
-              surfaceHover: '#16161b',
-              border: '#23232a',
-              borderLight: '#2e2e38',
-              muted: '#737380',
-              text: '#ededf0',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
     body {
-      background-color: #0a0a0c;
-      color: #ededf0;
+      background-color: #0d0d11;
+      color: #e4e4e7;
       font-family: 'Geist', system-ui, sans-serif;
-      text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
 
-    .flat-card {
-      background-color: #111114;
-      border: 1px solid #23232a;
-      border-radius: 8px;
+    .project-card {
+      background-color: #14141a;
+      border: 1px solid #272732;
+      border-radius: 6px;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
     }
-    .flat-card:hover {
-      border-color: #383844;
-      background-color: #141418;
+    .project-card:hover {
+      border-color: #3f3f50;
+      background-color: #17171f;
+    }
+    .project-card.active {
+      border-color: #525266;
+      background-color: #171720;
     }
 
-    .badge-solid {
+    .tag {
       font-family: 'Geist Mono', monospace;
       font-size: 11px;
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
-      background-color: #1a1a20;
-      border: 1px solid #2b2b35;
-      color: #b0b0bc;
+      background-color: #1c1c24;
+      border: 1px solid #2e2e3a;
+      color: #a1a1aa;
     }
 
-    .btn-solid-primary {
+    .btn-solid {
       background-color: #ffffff;
       color: #000000;
-      border-radius: 6px;
+      border-radius: 5px;
+      font-size: 12px;
       font-weight: 500;
-      font-size: 13px;
-      padding: 8px 14px;
+      padding: 6px 12px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       transition: background-color 0.15s ease;
     }
-    .btn-solid-primary:hover {
-      background-color: #e5e5e5;
+    .btn-solid:hover {
+      background-color: #e4e4e7;
     }
 
-    .btn-solid-secondary {
-      background-color: #141418;
-      color: #d1d1db;
-      border: 1px solid #282832;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 13px;
-      padding: 8px 14px;
+    .btn-outline {
+      background-color: #1c1c24;
+      color: #d4d4d8;
+      border: 1px solid #2e2e3a;
+      border-radius: 5px;
+      font-size: 12px;
+      padding: 6px 12px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       transition: all 0.15s ease;
     }
-    .btn-solid-secondary:hover {
-      background-color: #1c1c22;
-      border-color: #3e3e4c;
+    .btn-outline:hover {
+      background-color: #272733;
+      border-color: #3f3f52;
       color: #ffffff;
     }
 
-    .project-item.hidden-project {
-      display: none !important;
+    .details-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+      opacity: 0;
+    }
+    .project-card.active .details-content {
+      max-height: 600px;
+      opacity: 1;
+    }
+    .project-card.active .chevron-icon {
+      transform: rotate(180deg);
     }
   </style>
 </head>
-<body class="selection:bg-white selection:text-black">
+<body class="p-6 sm:p-12 selection:bg-white selection:text-black">
 
-  <!-- TOP HEADER -->
-  <header class="border-b border-app-border sticky top-0 z-50 bg-[#0a0a0c]">
-    <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-      
-      <a href="#" class="flex items-center gap-2">
-        <span class="font-semibold text-sm text-white tracking-tight">Trần Đức Nhiên</span>
-        <span class="text-xs text-app-muted font-mono">/ Unity Dev</span>
-      </a>
+  <div class="max-w-3xl mx-auto">
 
-      <nav class="flex items-center gap-6 text-xs font-mono text-app-muted">
-        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-        <a href="#skills" class="hover:text-white transition-colors">Technical Skills</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="https://github.com/Nhieenn" target="_blank" class="p-1.5 text-app-muted hover:text-white transition-colors" title="GitHub Profile">
-          <i class="ph ph-github-logo text-base"></i>
-        </a>
-        <a href="mailto:ducnhiendz2006@gmail.com" class="btn-solid-primary text-xs !py-1.5 !px-3">
-          <span>Liên hệ</span>
-        </a>
+    <!-- HEADER / CONTACT INFO ONLY -->
+    <header class="pb-8 mb-8 border-b border-[#272732]">
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          Trần Đức Nhiên
+        </h1>
+        <span class="font-mono text-xs text-zinc-400">
+          Unity Game Developer (Intern / Fresher)
+        </span>
       </div>
 
-    </div>
-  </header>
-
-  <!-- MAIN CONTAINER (4XL Clean Max-Width) -->
-  <main class="max-w-4xl mx-auto px-6 py-12">
-
-    <!-- HERO PROFILE -->
-    <section class="pb-12 border-b border-app-border">
-      <div class="flex items-center gap-2 text-xs font-mono text-app-muted mb-4">
-        <span class="w-2 h-2 rounded-full bg-slate-400"></span>
-        <span>Hồ sơ ứng tuyển: Intern / Fresher Unity Game Developer</span>
-      </div>
-
-      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-4 leading-snug">
-        Lập trình Gameplay, Xây dựng Hệ thống UI và Tối ưu Hiệu năng Unity
-      </h1>
-
-      <p class="text-sm sm:text-base text-app-muted leading-relaxed max-w-2xl mb-6">
-        Tập trung vào cấu trúc code rõ ràng (Design Patterns), cơ chế vật lý 2D/3D và tối ưu tài nguyên. Có kinh nghiệm thực tập phát triển độc lập một tựa game 3D từ A-Z.
+      <p class="text-sm text-zinc-400 mb-5 leading-relaxed">
+        Lập trình game Unity 2D & 3D bằng C#. Tập trung vào gameplay mechanics, UI architecture và tối ưu hóa tài nguyên.
       </p>
 
-      <div class="flex flex-wrap items-center gap-3">
-        <a href="#projects" class="btn-solid-primary">
-          <i class="ph ph-list-dashes"></i>
-          <span>Xem 6 dự án</span>
+      <!-- Contact Buttons -->
+      <div class="flex flex-wrap items-center gap-2.5 font-mono">
+        <a href="mailto:ducnhiendz2006@gmail.com" class="btn-solid">
+          <i class="ph ph-envelope"></i>
+          <span>ducnhiendz2006@gmail.com</span>
         </a>
-        <button onclick="copyEmail()" id="copyBtn" class="btn-solid-secondary font-mono text-xs">
-          <i class="ph ph-copy"></i>
-          <span id="copyText">ducnhiendz2006@gmail.com</span>
-        </button>
-        <a href="https://github.com/Nhieenn" target="_blank" class="btn-solid-secondary">
+        <a href="https://github.com/Nhieenn" target="_blank" class="btn-outline">
           <i class="ph ph-github-logo"></i>
-          <span>GitHub</span>
+          <span>GitHub: Nhieenn</span>
         </a>
+        <button onclick="copyEmail()" id="copyBtn" class="btn-outline">
+          <i class="ph ph-copy"></i>
+          <span id="copyText">Sao chép email</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- PROJECTS LIST (EXPANDABLE CARDS) -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-sm font-semibold tracking-tight uppercase text-zinc-400 font-mono">
+          Danh mục dự án (Nhấp vào thẻ để mở rộng)
+        </h2>
+        <span class="text-xs font-mono text-zinc-500">6 Projects</span>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- PROJECT 1: YWONDERGREENFARM -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Ywondergreenfarm</span>
+                <span class="tag bg-[#272735] text-white">Thực tập (A-Z)</span>
+                <span class="tag">3D Simulation</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Game nông trại 3D mô phỏng thực tế: trồng trọt, thu hoạch, hệ thống mùa vụ, NPC và kinh tế cửa hàng.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Vai trò & Đóng góp:</span>
+                <p class="text-zinc-300 pl-3">Solo Developer — Lập trình toàn diện từ thiết kế kịch bản, hệ thống gameplay, tương tác vật phẩm 3D, hệ thống bán hàng đến đóng gói sản phẩm.</p>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Kỹ thuật áp dụng:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>ScriptableObject:</strong> Quản lý dữ liệu cây trồng, thời gian tăng trưởng và giá cả vật phẩm.</li>
+                  <li><strong>Grid Placement System:</strong> Hệ thống chia ô đất và xử lý logic canh tác.</li>
+                  <li><strong>Tối ưu hóa:</strong> Phân chia Texture Atlas và kiểm soát Draw Calls trong môi trường 3D.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 3D</span>
+                  <span class="tag">C#</span>
+                  <span class="tag">ScriptableObject</span>
+                  <span class="tag">Grid System</span>
+                  <span class="tag">uGUI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: BULLET HELL 2D -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Bullet Hell Rogue-like 2D</span>
+                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp</span>
+                <span class="tag">2D Rogue-like</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Game sinh tồn đạn đạo mãnh liệt kết hợp cơ chế nâng cấp thẻ bài ngẫu nhiên.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Vai trò & Đóng góp:</span>
+                <p class="text-zinc-300 pl-3">UI/UX Architecture & Hệ thống Đa ngôn ngữ (Localization) trong dự án nhóm tốt nghiệp.</p>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Kỹ thuật áp dụng:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>UIManager Stack:</strong> Quản lý đóng mở các màn hình HUD, Pause Menu, Game Over và Card Upgrade.</li>
+                  <li><strong>Canvas Separation:</strong> Tách biệt Canvas động và tĩnh để triệt tiêu rebuild liên tục gây tụt FPS.</li>
+                  <li><strong>Localization:</strong> Chuyển đổi ngôn ngữ runtime, tích hợp TextMeshPro hỗ trợ font tiếng Việt chuẩn UTF-8.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 2D</span>
+                  <span class="tag">uGUI Canvas</span>
+                  <span class="tag">TextMeshPro</span>
+                  <span class="tag">Localization</span>
+                  <span class="tag">DOTween</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: THÀNH LŨY VIỆT -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Thành Lũy Việt</span>
+                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi</span>
+                <span class="tag">Tower Defense</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Game thủ thành chiến thuật đề tài lịch sử văn hóa Việt Nam thực hiện cùng nhóm dự thi.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Mô tả & Kỹ thuật:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>A* Pathfinding:</strong> Thuật toán tìm đường thông minh cho từng đợt quân địch.</li>
+                  <li><strong>Grid Building & Combat:</strong> Hệ thống định vị đặt tháp phòng thủ và tính toán sát thương tầm xa.</li>
+                  <li><strong>Team Collaboration:</strong> Phối hợp nhóm theo mô hình Git Flow.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 2D</span>
+                  <span class="tag">C#</span>
+                  <span class="tag">Pathfinding</span>
+                  <span class="tag">Grid System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: MERGE FRUIT 3D -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Merge Fruit 3D</span>
+                <span class="tag">Dự án Cá nhân</span>
+                <span class="tag">3D Physics</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Game giải đố hợp nhất hoa quả 3D tính toán va chạm theo vật lý thực tế.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Kỹ thuật áp dụng:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>3D Rigidbody Physics:</strong> Xử lý tương tác vật lý, độ nảy và trọng lực giữa các khối quả cầu.</li>
+                  <li><strong>Merge Evolution:</strong> Nhận diện va chạm giữa 2 vật thể cùng cấp để hợp nhất thành quả cấp cao hơn.</li>
+                  <li><strong>Juice Feedback:</strong> Tích hợp Particle System và hiệu ứng âm thanh phản hồi khi hợp nhất.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 3D</span>
+                  <span class="tag">Rigidbody Physics</span>
+                  <span class="tag">Particle System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: BLUE SQUARE 2D -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Blue Square 2D</span>
+                <span class="tag">Dự án Cá nhân</span>
+                <span class="tag">Endless Runner</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Endless Runner phong cách Geometry Dash với cơ chế nhảy vượt chướng ngại vật chuẩn xác.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Kỹ thuật áp dụng:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>Raycast 2D Collision:</strong> Kiểm soát trạng thái tiếp đất (Grounded check) và va chạm chính xác ở tốc độ cao.</li>
+                  <li><strong>Object Pooling:</strong> Tái sử dụng chướng ngại vật xuất hiện liên tục mà không gây tăng rác bộ nhớ (GC).</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 2D</span>
+                  <span class="tag">Raycast</span>
+                  <span class="tag">Object Pooling</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: FLAPPY BAT -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 sm:p-5 cursor-pointer flex items-start justify-between gap-4">
+            <div class="space-y-1.5 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-white font-semibold text-base">Flappy Bat</span>
+                <span class="tag">Dự án Cá nhân</span>
+                <span class="tag">2D Arcade</span>
+              </div>
+              <p class="text-xs sm:text-sm text-zinc-400">
+                Arcade 2D hoàn thiện Game Loop, Sprite Animation và đóng gói đa nền tảng PC & Android.
+              </p>
+            </div>
+            <div class="pt-1 text-zinc-400 shrink-0">
+              <i class="ph ph-caret-down text-lg chevron-icon transition-transform duration-200"></i>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 sm:px-5 pb-5 border-t border-[#272732] pt-4 cursor-default" onclick="event.stopPropagation()">
+            <div class="space-y-3 text-xs sm:text-sm text-zinc-300 font-mono">
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Kỹ thuật áp dụng:</span>
+                <ul class="list-disc list-inside text-zinc-300 pl-3 space-y-1">
+                  <li><strong>Game Loop & State:</strong> Quản lý chu trình chơi (Menu -> Playing -> Game Over -> Restart).</li>
+                  <li><strong>Cross-platform Build:</strong> Đóng gói và chạy mượt mà trên cả Windows PC và Android.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="text-zinc-500 block mb-0.5">• Công nghệ & Công cụ:</span>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="tag">Unity 2D</span>
+                  <span class="tag">PlayerPrefs HighScore</span>
+                  <span class="tag">Android Build</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- QUICK TECHNICAL OVERVIEW TABLE -->
-    <section class="py-8 border-b border-app-border">
-      <div class="text-xs font-mono uppercase text-app-muted mb-3">Thông số kỹ thuật cốt lõi</div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
-        <div class="flat-card p-3">
-          <div class="text-app-muted mb-1">Engine & Ngôn ngữ</div>
-          <div class="text-white font-medium">Unity / C#</div>
-        </div>
-        <div class="flat-card p-3">
-          <div class="text-app-muted mb-1">Kiến trúc chính</div>
-          <div class="text-white font-medium">Observer, State Machine, Pooling</div>
-        </div>
-        <div class="flat-card p-3">
-          <div class="text-app-muted mb-1">Giao diện</div>
-          <div class="text-white font-medium">uGUI, TextMeshPro, DOTween</div>
-        </div>
-        <div class="flat-card p-3">
-          <div class="text-app-muted mb-1">Quản lý mã nguồn</div>
-          <div class="text-white font-medium">Git & GitHub Workflow</div>
-        </div>
-      </div>
-    </section>
+    <!-- FOOTER -->
+    <footer class="mt-12 pt-6 border-t border-[#272732] flex items-center justify-between text-xs text-zinc-500 font-mono">
+      <span>Trần Đức Nhiên © 2026</span>
+      <span>Unity Game Developer</span>
+    </footer>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="py-12 border-b border-app-border">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
-        <div>
-          <h2 class="text-xl font-semibold text-white tracking-tight">Danh sách dự án đã thực hiện</h2>
-          <p class="text-xs text-app-muted font-mono mt-0.5">Tổng cộng 6 dự án (Thực tập, Tốt nghiệp, Cuộc thi, Cá nhân)</p>
-        </div>
+  </div>
 
-        <!-- Filter Buttons (Flat Solid) -->
-        <div class="flex items-center gap-1.5 text-xs font-mono">
-          <button onclick="filterProjects('all')" class="filter-btn px-2.5 py-1 rounded bg-white text-black font-medium" data-filter="all">Tất cả (6)</button>
-          <button onclick="filterProjects('team')" class="filter-btn px-2.5 py-1 rounded bg-[#16161b] text-app-muted hover:text-white" data-filter="team">Thực tập & Nhóm</button>
-          <button onclick="filterProjects('solo')" class="filter-btn px-2.5 py-1 rounded bg-[#16161b] text-app-muted hover:text-white" data-filter="solo">Cá nhân</button>
-        </div>
-      </div>
-
-      <div class="space-y-4" id="projectsList">
-
-        <!-- 1. YWONDERGREENFARM -->
-        <div class="project-item flat-card p-6" data-category="team">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Dự án Thực tập (A-Z)</span>
-                <span class="badge-solid">3D Simulation</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Ywondergreenfarm — 3D Farm Simulation</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#01</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Dự án thực tế hoàn thành độc lập trong đợt thực tập doanh nghiệp. Chịu trách nhiệm toàn diện: lập trình hệ thống nông trại (trồng trọt, mùa vụ, thu hoạch), tương tác vật phẩm 3D, NPC và giao diện cửa hàng kinh tế.
-          </p>
-
-          <div class="border-t border-b border-app-border py-3 my-4 text-xs font-mono space-y-1 text-[#c2c2ce]">
-            <div>• <strong>ScriptableObject:</strong> Cấu trúc dữ liệu mùa vụ, chu kỳ tăng trưởng và giá trị nông sản.</div>
-            <div>• <strong>Grid Placement:</strong> Xây dựng hệ thống ô đất canh tác và kiểm soát tương tác Raycast 3D.</div>
-            <div>• <strong>Tối ưu hóa:</strong> Phân chia Texture Atlas và kiểm soát Draw Calls trong môi trường 3D.</div>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="badge-solid">Unity 3D</span>
-              <span class="badge-solid">C#</span>
-              <span class="badge-solid">ScriptableObject</span>
-              <span class="badge-solid">Grid System</span>
-              <span class="badge-solid">uGUI</span>
-            </div>
-            <span class="text-xs font-mono text-app-muted">Bản build: D:\YwonderGreenFarmBuild</span>
-          </div>
-        </div>
-
-        <!-- 2. BULLET HELL 2D -->
-        <div class="project-item flat-card p-6" data-category="team">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Đồ án Tốt nghiệp</span>
-                <span class="badge-solid">2D Rogue-like</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Bullet Hell Rogue-like 2D</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#02</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Đồ án tốt nghiệp làm theo nhóm. Đảm nhiệm vai trò UI/UX Architecture toàn diện và xây dựng hệ thống Bản địa hóa ngôn ngữ (Localization).
-          </p>
-
-          <div class="border-t border-b border-app-border py-3 my-4 text-xs font-mono space-y-1 text-[#c2c2ce]">
-            <div>• <strong>UIManager:</strong> Quản lý Stack các lớp giao diện (HUD, Pause Menu, Màn hình chọn thẻ bài nâng cấp).</div>
-            <div>• <strong>Canvas Separation:</strong> Tách riêng Canvas tĩnh và Canvas động để tránh rebuild liên tục gây tụt FPS.</div>
-            <div>• <strong>Localization:</strong> Hỗ trợ chuyển đổi ngôn ngữ runtime, xử lý font TextMeshPro tiếng Việt có dấu.</div>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="badge-solid">Unity 2D</span>
-              <span class="badge-solid">uGUI</span>
-              <span class="badge-solid">Localization</span>
-              <span class="badge-solid">TextMeshPro</span>
-              <span class="badge-solid">DOTween</span>
-            </div>
-            <span class="text-xs font-mono text-app-muted">Team Project</span>
-          </div>
-        </div>
-
-        <!-- 3. THÀNH LŨY VIỆT -->
-        <div class="project-item flat-card p-6" data-category="team">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Đề tài Cuộc thi</span>
-                <span class="badge-solid">Tower Defense</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Thành Lũy Việt</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#03</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Game thủ thành đề tài lịch sử văn hóa Việt Nam cùng nhóm dự thi. Xây dựng cơ chế xây dựng thành trì, phân chia đợt quái và thuật toán định tuyến quân lính.
-          </p>
-
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <span class="badge-solid">Tower Defense</span>
-            <span class="badge-solid">A* Pathfinding</span>
-            <span class="badge-solid">Grid Building</span>
-            <span class="badge-solid">Team Collaboration</span>
-          </div>
-        </div>
-
-        <!-- 4. MERGE FRUIT 3D -->
-        <div class="project-item flat-card p-6" data-category="solo">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Dự án Cá nhân</span>
-                <span class="badge-solid">3D Physics</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Merge Fruit 3D</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#04</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Game hợp nhất hoa quả dạng 3D dựa trên mô phỏng vật lý thực tế. Xử lý va chạm chuẩn xác giữa các khối cầu đa kích thước, logic tiến hóa quả và hiệu ứng âm thanh/hạt.
-          </p>
-
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <span class="badge-solid">Unity 3D</span>
-            <span class="badge-solid">Rigidbody Physics</span>
-            <span class="badge-solid">Particle System</span>
-            <span class="badge-solid">Solo Dev</span>
-          </div>
-        </div>
-
-        <!-- 5. BLUE SQUARE 2D -->
-        <div class="project-item flat-card p-6" data-category="solo">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Dự án Cá nhân</span>
-                <span class="badge-solid">2D Rhythm Runner</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Blue Square 2D</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#05</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Endless Runner phong cách Geometry Dash, xử lý Raycast nhảy chính xác và áp dụng Object Pooling quản lý chướng ngại vật xuất hiện liên tục không làm đầy bộ nhớ.
-          </p>
-
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <span class="badge-solid">Unity 2D</span>
-            <span class="badge-solid">2D Raycast</span>
-            <span class="badge-solid">Object Pooling</span>
-          </div>
-        </div>
-
-        <!-- 6. FLAPPY BAT -->
-        <div class="project-item flat-card p-6" data-category="solo">
-          <div class="flex items-start justify-between gap-4 mb-3">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span class="badge-solid text-white bg-[#22222a]">Dự án Cá nhân</span>
-                <span class="badge-solid">2D Arcade</span>
-              </div>
-              <h3 class="text-lg font-semibold text-white">Flappy Bat</h3>
-            </div>
-            <span class="text-xs font-mono text-app-muted">#06</span>
-          </div>
-
-          <p class="text-sm text-app-muted leading-relaxed mb-4">
-            Hoàn thiện Game Loop chuẩn trong Unity, Sprite Animation, lưu trữ điểm cao High Score, đóng gói và xuất bản thành công trên Windows và Android.
-          </p>
-
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <span class="badge-solid">Unity 2D</span>
-            <span class="badge-solid">Game Loop</span>
-            <span class="badge-solid">Windows & Android Build</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TECHNICAL SKILLS -->
-    <section id="skills" class="py-12 border-b border-app-border">
-      <h2 class="text-xl font-semibold text-white tracking-tight mb-6">Kỹ năng chuyên môn</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-        
-        <div class="flat-card p-5">
-          <div class="font-mono text-white font-semibold mb-3 pb-2 border-b border-app-border">01. Core Unity & C#</div>
-          <ul class="space-y-2 text-app-muted font-mono">
-            <li>• Lập trình OOP, Clean Code</li>
-            <li>• Observer & State Machine Pattern</li>
-            <li>• Object Pooling System</li>
-            <li>• Data với ScriptableObject</li>
-          </ul>
-        </div>
-
-        <div class="flat-card p-5">
-          <div class="font-mono text-white font-semibold mb-3 pb-2 border-b border-app-border">02. UI & Optimization</div>
-          <ul class="space-y-2 text-app-muted font-mono">
-            <li>• UIManager & uGUI Canvas Scaler</li>
-            <li>• Tách Canvas tĩnh / động</li>
-            <li>• Runtime Localization (Đa ngôn ngữ)</li>
-            <li>• Tối ưu Draw Calls & Sprite Atlas</li>
-          </ul>
-        </div>
-
-        <div class="flat-card p-5">
-          <div class="font-mono text-white font-semibold mb-3 pb-2 border-b border-app-border">03. Workflow & Tools</div>
-          <ul class="space-y-2 text-app-muted font-mono">
-            <li>• Git (Branch, Merge, Conflict)</li>
-            <li>• Unity Profiler & Memory</li>
-            <li>• Build Windows PC & Android</li>
-            <li>• Làm việc nhóm & Deadline</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-12">
-      <div class="flat-card p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div>
-          <h2 class="text-xl font-semibold text-white mb-2">Sẵn sàng nhận cơ hội việc làm</h2>
-          <p class="text-xs font-mono text-app-muted">Vị trí: Intern / Fresher Unity Game Developer (Remote hoặc Onsite)</p>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-2 shrink-0">
-          <a href="mailto:ducnhiendz2006@gmail.com" class="btn-solid-primary">
-            <i class="ph ph-envelope"></i>
-            <span>Gửi Email</span>
-          </a>
-          <a href="https://github.com/Nhieenn" target="_blank" class="btn-solid-secondary">
-            <i class="ph ph-github-logo"></i>
-            <span>GitHub Profile</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="mt-8 text-center text-xs font-mono text-app-muted">
-        Trần Đức Nhiên © 2026 — Clean Flat Portfolio
-      </div>
-    </section>
-
-  </main>
-
+  <!-- SCRIPT EXPAND / COLLAPSE -->
   <script>
+    function toggleProject(cardElement) {
+      const isActive = cardElement.classList.contains('active');
+      
+      // Close all cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.classList.remove('active');
+      });
+
+      // Toggle current card
+      if (!isActive) {
+        cardElement.classList.add('active');
+      }
+    }
+
     function copyEmail() {
       const email = 'ducnhiendz2006@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         const textSpan = document.getElementById('copyText');
-        const originalText = textSpan.innerText;
-        textSpan.innerText = 'Đã chép!';
+        textSpan.innerText = 'Đã sao chép!';
         setTimeout(() => {
-          textSpan.innerText = originalText;
+          textSpan.innerText = 'Sao chép email';
         }, 2000);
-      });
-    }
-
-    function filterProjects(filter) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => {
-        if (btn.getAttribute('data-filter') === filter) {
-          btn.className = 'filter-btn px-2.5 py-1 rounded bg-white text-black font-medium';
-        } else {
-          btn.className = 'filter-btn px-2.5 py-1 rounded bg-[#16161b] text-app-muted hover:text-white';
-        }
-      });
-
-      const items = document.querySelectorAll('.project-item');
-      items.forEach(item => {
-        const categories = item.getAttribute('data-category') || '';
-        if (filter === 'all' || categories.includes(filter)) {
-          item.classList.remove('hidden-project');
-        } else {
-          item.classList.add('hidden-project');
-        }
       });
     }
   </script>

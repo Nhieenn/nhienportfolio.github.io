@@ -146,12 +146,12 @@
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp (Tâm huyết)</span>
+                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp</span>
                 <span class="text-[11px] font-mono text-zinc-500">#01</span>
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Bullet Hell: Pixel Survival</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game Rogue-like sinh tồn đạn đạo 2D. Ứng dụng kiến trúc Unity 6 UI Toolkit (UXML/USS) thay thế uGUI, tối ưu 3–5 Draw Calls và bản địa hóa 5 ngôn ngữ.
+                Trò chơi thể loại Rogue-like sinh tồn 2D. Ứng dụng kiến trúc Unity 6 UI Toolkit (UXML/USS), tối ưu hóa còn 3–5 Draw Calls và tích hợp hệ thống bản địa hóa 5 ngôn ngữ.
               </p>
             </div>
             
@@ -167,20 +167,20 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>UI/UX Engineer & Client Developer:</strong> Xây dựng toàn bộ hệ thống giao diện (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss, HUD, Tutorial Film Reel) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp Firebase Auth ngầm trong màn hình Loading.
+                <strong>UI/UX Engineer & Client Developer:</strong> Xây dựng hệ thống giao diện người dùng (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss, HUD, Tutorial) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp xác thực tài khoản Firebase Auth trong quy trình tải dữ liệu ban đầu.
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>UI Toolkit & 3-Layer Pixel Art:</strong> Giảm Draw Calls từ 40–80 xuống chỉ <strong>3–5 Draw Calls/màn hình</strong> nhờ Auto-Batching và Sprite Atlas. Cách ly animation trên GPU Matrix Transform, duy trì mượt mà 60 FPS.</li>
-                <li><strong>Event-Driven / EventBus Pattern:</strong> Kết nối lỏng (Loose Coupling) giữa UI với Gameplay, Audio, Quest; loại bỏ hoàn toàn [SerializeField]/FindObject, triệt tiêu lỗi NullReferenceException.</li>
-                <li><strong>Bản địa hóa Reactive (5 Ngôn ngữ):</strong> Nạp từ điển JSON (Việt, Anh, Tây Ban Nha, Nhật, Trung), đổi ngôn ngữ tức thì không cần reload Scene.</li>
-                <li><strong>Chống vỡ Layout CJK & Font Fallback Chain:</strong> Flexbox thích ứng, Dynamic SDF Font Atlas xử lý triệt để lỗi ô vuông (□ - Tofu character) trên mobile.</li>
-                <li><strong>Gatekeeper Pattern:</strong> Tự động kiểm duyệt dữ liệu chuỗi thô và kích hoạt từ điển tiếng Anh dự phòng (Anti-Leak Fallback) khi gặp sự cố mạng.</li>
+                <li><strong>UI Toolkit & 3-Layer Pixel Art:</strong> Giảm số lượng lệnh vẽ từ 40–80 xuống <strong>3–5 Draw Calls/màn hình</strong> thông qua Auto-Batching và Sprite Atlas. Cách ly chuyển động trên GPU Matrix Transform, duy trì tốc độ khung hình 60 FPS.</li>
+                <li><strong>Event-Driven / EventBus Pattern:</strong> Thiết lập cơ chế phân phối sự kiện trung tâm (Loose Coupling) giữa UI và Gameplay, Audio, Quest; loại bỏ việc tham chiếu trực tiếp qua [SerializeField]/FindObject, phòng ngừa lỗi NullReferenceException.</li>
+                <li><strong>Hệ thống Bản địa hóa (5 Ngôn ngữ):</strong> Nạp dữ liệu từ điển JSON (Việt, Anh, Tây Ban Nha, Nhật, Trung), hỗ trợ chuyển đổi ngôn ngữ thời gian thực không yêu cầu tải lại Scene.</li>
+                <li><strong>Xử lý Typography & Layout Đa ngữ:</strong> Ứng dụng Flexbox và Dynamic SDF Font Atlas xử lý lỗi hiển thị ký tự tượng hình (□ - Tofu character) trên thiết bị di động.</li>
+                <li><strong>Gatekeeper Pattern:</strong> Kiểm duyệt dữ liệu chuỗi hiển thị và kích hoạt từ điển tiếng Anh dự phòng (Anti-Leak Fallback) khi xảy ra lỗi kết nối.</li>
               </ul>
             </div>
 
@@ -219,12 +219,12 @@
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Dự án Thực tập (Doanh nghiệp)</span>
+                <span class="tag bg-[#272735] text-white">Dự án Thực tập</span>
                 <span class="text-[11px] font-mono text-zinc-500">#02</span>
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Ywondergreenfarm — 3D Farm Simulation</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game nông trại 3D mô phỏng thực tế. Xây dựng Core Gameplay, 3D Grid Building, mô phỏng Offline theo Unix Timestamp và UI Toolkit cho Mobile.
+                Trò chơi mô phỏng nông trại 3D. Triển khai Core Gameplay, hệ thống xây dựng 3D Grid, tính toán tiến trình Offline theo Unix Timestamp và giao diện UI Toolkit cho Mobile.
               </p>
             </div>
             
@@ -240,19 +240,19 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Game Developer (Core Gameplay, Simulation & UI Architecture):</strong> Lập trình hệ thống Nông trại & Chăn nuôi (vòng đời cây trồng, thú nuôi, cơ chế sinh lão bệnh tử), Hệ thống Xây dựng & Quy hoạch lưới 3D (BuildGridManager), Lưu trữ dữ liệu Offline/Online theo Unix Timestamp, Giao diện Mobile bằng UI Toolkit (UXML/USS) và Rigging gắn dụng cụ vào Humanoid Animator.
+                <strong>Unity Game Developer (Core Gameplay, Simulation & UI Architecture):</strong> Lập trình hệ thống Nông trại & Chăn nuôi (chu kỳ sinh trưởng cây trồng, vật nuôi, cơ chế suy giảm trạng thái), Hệ thống Xây dựng & Quy hoạch lưới 3D (BuildGridManager), Lưu trữ dữ liệu Offline/Online theo Unix Timestamp, Giao diện Mobile bằng UI Toolkit (UXML/USS) và Rigging dụng cụ vào Humanoid Animator.
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động sinh hàng trăm Asset dữ liệu cây trồng/vật phẩm chỉ với 1-click.</li>
-                <li><strong>Real-time Wall-Clock Simulation:</strong> Tính toán tiến trình phát triển nông trại khi thoát app (Offline Progression / Catch-up logic) theo Unix Epoch (RealNow) mà không cần chạy nền gây hao pin.</li>
-                <li><strong>3D Grid-based Placement & Spatial Math:</strong> Xử lý toán không gian (WorldToCell / CellToWorldCenter), Occupancy Matrix đa kích thước (1x1 đến giàn 20 ô) kết hợp URP Ghost Preview Shader bán trong suốt.</li>
-                <li><strong>Tối ưu hóa Mobile & UI Toolkit:</strong> Triệt tiêu rác bộ nhớ (GC Alloc) hàng frame, điều tiết tần suất cập nhật TextMesh 0.25s, giao diện Flexbox đáp ứng hoàn hảo Safe Area tai thỏ.</li>
+                <li><strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động hóa quá trình khởi tạo Asset dữ liệu cây trồng và vật phẩm.</li>
+                <li><strong>Real-time Wall-Clock Simulation:</strong> Tính toán tiến trình phát triển nông trại khi thoát ứng dụng (Offline Progression / Catch-up logic) theo Unix Epoch (RealNow) mà không duy trì tác vụ nền.</li>
+                <li><strong>3D Grid-based Placement & Spatial Math:</strong> Xử lý chuyển đổi tọa độ không gian (WorldToCell / CellToWorldCenter) và Occupancy Matrix cho công trình kích thước 1x1 đến 20 ô kết hợp URP Ghost Preview Shader.</li>
+                <li><strong>Tối ưu hóa Mobile & UI Toolkit:</strong> Hạn chế phân bổ bộ nhớ rác (GC Alloc) theo khung hình, điều tiết tần suất cập nhật TextMesh định kỳ 0.25s, thiết lập giao diện tương thích vùng hiển thị an toàn (Safe Area).</li>
               </ul>
             </div>
 
@@ -291,12 +291,12 @@
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi (Nhóm)</span>
+                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi</span>
                 <span class="text-[11px] font-mono text-zinc-500">#03</span>
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Thành Lũy Việt</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game Tower Defense đề tài lịch sử Việt Nam (10 chiến dịch). Xây dựng cơ chế đặt/nâng cấp tháp, đạn đạo, bẫy chiến thuật AOE và nạp dữ liệu ScriptableObject.
+                Trò chơi thể loại Tower Defense 2D gồm 10 chiến dịch. Triển khai cơ chế định vị/nâng cấp tháp, đạn đạo, bẫy chiến thuật AOE và quản lý dữ liệu bằng ScriptableObject.
               </p>
             </div>
             
@@ -312,19 +312,19 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Gameplay & Core Mechanics Programmer:</strong> Lập trình hệ thống Đặt tháp & Tương tác Menu ngữ cảnh (Nâng cấp Lv1→3, Hủy tháp hoàn ô đất), Hệ thống Tác chiến tháp (quét mục tiêu, Fire Rate, đạn bay va chạm), Quái & Đợt tấn công theo Waypoints (Mathf.Atan2 xoay hướng), Hệ thống Bẫy chiến thuật (Bẫy mìn nổ AOE, Bẫy chông làm chậm) và Module tư liệu lịch sử 10 chiến dịch.
+                <strong>Gameplay & Core Mechanics Programmer:</strong> Lập trình hệ thống Đặt tháp & Menu tương tác ngữ cảnh (Nâng cấp Lv1→3, Hủy tháp giải phóng ô đất), Hệ thống Tác chiến tháp (quét mục tiêu, Fire Rate, đạn bay va chạm), Kẻ địch & Đợt tấn công theo Waypoints (Mathf.Atan2), Hệ thống Bẫy chiến thuật (Bẫy mìn AOE, Bẫy chông) và Module dữ liệu 10 chiến dịch.
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Data-Driven Architecture (ScriptableObject):</strong> Tách biệt toàn bộ cấu hình tháp (TowerData), quái (EnemyData), đợt quái (WaveConfigSO) và bẫy (TrapData) ra khỏi source code giúp cân bằng chỉ số trực quan trên Editor.</li>
-                <li><strong>World Space to Screen Space & Dynamic UI Matching:</strong> Ánh xạ vị trí bấm chọn tháp từ World sang Screen Space, áp dụng Mathf.Clamp chống tràn viền trên mọi tỷ lệ phân giải màn hình.</li>
-                <li><strong>Vật lý 2D & Sát thương AOE:</strong> Ứng dụng Physics2D.OverlapCircleAll và OnTriggerEnter2D trong module bẫy mìn phát hiện và kích nổ sát thương diện rộng.</li>
-                <li><strong>Design Pattern (Singleton & Component-Based):</strong> Sử dụng Singleton DontDestroyOnLoad cho HistoryData xuyên suốt 10 màn chơi; tách rời logic hiển thị máu (Hpbar_Enemy) và logic trạng thái thực thể.</li>
+                <li><strong>Data-Driven Architecture (ScriptableObject):</strong> Tách biệt cấu hình tháp (TowerData), kẻ địch (EnemyData), đợt quái (WaveConfigSO) và bẫy (TrapData) ra khỏi mã nguồn để hiệu chỉnh thông số trực tiếp trên Editor.</li>
+                <li><strong>World Space to Screen Space UI Matching:</strong> Ánh xạ tọa độ lựa chọn tháp từ World Space sang Screen Space, áp dụng Mathf.Clamp giới hạn vị trí hiển thị giao diện theo độ phân giải màn hình.</li>
+                <li><strong>Vật lý 2D & Sát thương AOE:</strong> Ứng dụng Physics2D.OverlapCircleAll và OnTriggerEnter2D phát hiện đối tượng và áp dụng sát thương diện rộng theo bán kính.</li>
+                <li><strong>Design Pattern (Singleton & Component-Based):</strong> Áp dụng Singleton kết hợp DontDestroyOnLoad quản lý dữ liệu qua các màn chơi; phân tách độc lập module hiển thị (Hpbar_Enemy) và module trạng thái thực thể.</li>
               </ul>
             </div>
 
@@ -364,7 +364,7 @@
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Merge Fruit 3D</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game giải đố hợp nhất hoa quả 3D tính toán va chạm theo vật lý thực. Tích hợp dự đoán quỹ đạo rơi Raycast và giao diện UI Toolkit.
+                Trò chơi giải đố hợp nhất 3D mô phỏng va chạm vật lý. Tích hợp thuật toán dự đoán quỹ đạo rơi bằng Raycast và giao diện UI Toolkit.
               </p>
             </div>
             
@@ -380,19 +380,19 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Gameplay & Physics Developer:</strong> Lập trình Core Gameplay logic nhận diện va chạm hợp nhất giữa các quả cùng cấp (Merge Evolution), cơ chế kéo thả giới hạn biên (Clamp), đường ngắm dự đoán quỹ đạo rơi tự do (Raycast + LineRenderer), cảm biến phát hiện thua cuộc (Hazard Sensor) và hệ thống UI Toolkit hiện đại.
+                <strong>Unity Gameplay & Physics Developer:</strong> Lập trình logic nhận diện va chạm hợp nhất đối tượng cùng cấp (Merge Evolution), cơ chế điều khiển giới hạn biên (Clamp), đường ngắm dự đoán quỹ đạo rơi (Raycast + LineRenderer), cảm biến phát hiện điều kiện kết thúc màn chơi (Hazard Sensor) và hệ thống giao diện UI Toolkit.
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Vật lý 3D & Xử lý Quỹ đạo (Raycast & Rigidbody):</strong> Sử dụng Physics.Raycast + LineRenderer tính toán điểm tiếp xúc thời gian thực; xử lý chuyển đổi mượt mà giữa isKinematic khi ngắm và Rigidbody vật lý thực khi thả.</li>
-                <li><strong>Tối ưu hóa Vùng Cảm biến (Hazard Sensor Trigger):</strong> Quản lý danh sách thực thể fruitsInZone qua OnTriggerEnter/Exit thay vì hàm quét FindObjects hàng frame, triệt tiêu Garbage Collection (GC Alloc) và giảm tải CPU.</li>
-                <li><strong>Giao diện UI Toolkit (UXML / USS):</strong> Tách biệt logic C# và giao diện, quản lý dynamic class (AddToClassList) tạo animation nảy điểm số (pulse effect) khi đạt kỷ lục mới.</li>
-                <li><strong>Kiến trúc Singleton & Đồng bộ Luồng an toàn:</strong> Áp dụng Singleton cho GameManager, UIManager, ScoreManager; dùng Coroutine đồng bộ hóa vòng đời khởi tạo UIDocument tránh race-condition.</li>
+                <li><strong>Vật lý 3D & Xử lý Quỹ đạo (Raycast & Rigidbody):</strong> Sử dụng Physics.Raycast kết hợp LineRenderer tính toán điểm tiếp xúc theo thời gian thực; chuyển đổi trạng thái giữa isKinematic khi điều hướng và Rigidbody khi kích hoạt rơi tự do.</li>
+                <li><strong>Xử lý Vùng Cảm biến (Hazard Sensor Trigger):</strong> Quản lý danh sách thực thể qua OnTriggerEnter/Exit thay thế các hàm quét đối tượng định kỳ, giảm thiểu phân bổ bộ nhớ rác (GC Alloc) và tải xử lý CPU.</li>
+                <li><strong>Giao diện UI Toolkit (UXML / USS):</strong> Phân tách logic C# và cấu trúc giao diện UXML/USS, quản lý class động (AddToClassList) kích hoạt hiệu ứng hiển thị điểm số.</li>
+                <li><strong>Kiến trúc Singleton & Luồng thực thi:</strong> Áp dụng mô hình Singleton cho các lớp quản lý (GameManager, UIManager, ScoreManager); sử dụng Coroutine đồng bộ vòng đời khởi tạo UIDocument nhằm phòng tránh xung đột thứ tự thực thi (race conditions).</li>
               </ul>
             </div>
 
@@ -436,7 +436,7 @@
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Blue Square 2D</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Endless Runner / Platformer tốc độ cao. Ứng dụng Generic Object Pooling, tối ưu Game Feel (Coyote Time, Jump Buffering) và Dynamic Theme.
+                Trò chơi thể loại Endless Runner / Platformer 2D. Ứng dụng Generic Object Pooling, cơ chế điều khiển Coyote Time, Jump Buffering và chuyển đổi giao diện động (Dynamic Theme).
               </p>
             </div>
             
@@ -452,19 +452,19 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Gameplay & Systems Developer:</strong> Lập trình Core Mechanics & Game Feel với cơ chế Coyote Time & Jump Buffering, hỗ trợ đa nền tảng New Input System (Keyboard, Touch, Mouse). Xây dựng ThemeManager đổi màu thế giới thời gian thực (Ngày → Chiều → Đêm) theo điểm số, độ khó gameSpeed tăng dần và Cinemachine Impulse Camera Shake.
+                <strong>Unity Gameplay & Systems Developer:</strong> Lập trình cơ chế di chuyển và nhảy (Coyote Time, Jump Buffering), tiếp nhận điều khiển đa thiết bị qua Unity New Input System. Xây dựng ThemeManager xử lý chuyển đổi màu sắc môi trường theo mốc điểm, điều tiết biến thiên tốc độ (gameSpeed) và hiệu ứng rung máy quay (Cinemachine Impulse).
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng Generic Dictionary ObjectPool cho toàn bộ chướng ngại vật (ObstacleSpawner), triệt tiêu hoàn toàn Instantiate/Destroy trong game loop và loại bỏ hiện tượng GC Spike.</li>
-                <li><strong>Platformer Game Feel Optimization:</strong> Tính toán chính xác coyoteTime (cho phép nhảy sau khi rời mép đất) và jumpBufferTime (nhận trước lệnh nhảy), loại bỏ cảm giác input drop.</li>
-                <li><strong>Dynamic Color Cycle (Color.Lerp / HDR):</strong> Thuật toán nội suy màu toán học theo thang điểm, tự động cập nhật đồng bộ màu sắc của Camera Background, Sprite Renderers và Particle Systems.</li>
-                <li><strong>Seamless Infinite Scrolling & UI Toolkit:</strong> Cuộn nền vô tận sử dụng Mathf.Repeat kết hợp Sprite Bounds (GroundScroller). Sử dụng UI Toolkit tạo menu hiện đại và animation nhấp nháy kỷ lục mới.</li>
+                <li><strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng UnityEngine.Pool.ObjectPool dạng Generic Dictionary quản lý chướng ngại vật, thay thế việc khởi tạo và hủy đối tượng (Instantiate/Destroy) liên tục, hạn chế phát sinh đỉnh phân bổ bộ nhớ rác (GC Spike).</li>
+                <li><strong>Xử lý Độ trễ Điều khiển (Coyote Time & Jump Buffer):</strong> Xử lý độ nhạy điều khiển thông qua tính toán thời gian cho phép nhảy ngoài biên (Coyote Time) và bộ nhớ đệm lệnh nhảy (Jump Buffer Time).</li>
+                <li><strong>Dynamic Color Cycle (Color.Lerp / HDR):</strong> Sử dụng thuật toán nội suy màu (Color.Lerp) theo mốc điểm số, đồng bộ màu sắc giữa Camera Background, Sprite Renderers và Particle Systems.</li>
+                <li><strong>Cuộn Nền Liên Tục & UI Toolkit:</strong> Xây dựng cơ chế cuộn nền lặp (Mathf.Repeat) dựa trên biên kích thước Sprite (Sprite Bounds). Thiết lập giao diện người dùng và hoạt ảnh thông báo bằng Unity UI Toolkit.</li>
               </ul>
             </div>
 
@@ -508,7 +508,7 @@
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Flappy Bat</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game Arcade 2D hoàn thiện Game Loop chuẩn trong Unity, Sprite Animation, cơ chế ăn tim hồi máu và đóng gói đa nền tảng PC & Android.
+                Trò chơi thể loại Arcade 2D. Triển khai vòng đời Game Loop, Sprite Animation, cơ chế thu thập vật phẩm hồi phục và xuất bản trên Windows, Android.
               </p>
             </div>
             
@@ -524,19 +524,19 @@
           <!-- EXPANDABLE DETAILS -->
           <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
               <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Solo Developer (First Game Development Milestone):</strong> Tự thiết kế và lập trình trọn vẹn vòng đời game loop (Menu, Playing, Game Over, Restart), cơ chế sinh ngẫu nhiên chướng ngại vật theo chiều cao biến thiên, cơ chế sinh trái tim nhặt hồi máu, bộ đếm thời gian sinh tồn và xuất bản đa nền tảng.
+                <strong>Solo Developer:</strong> Thiết kế và lập trình vòng đời trò chơi (Menu, Playing, Game Over, Restart), hệ thống sinh chướng ngại vật ngẫu nhiên theo chiều cao, cơ chế thu thập vật phẩm hồi phục máu, tính toán thời gian tồn tại và đóng gói đa nền tảng.
               </p>
             </div>
 
             <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
               <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Procedural Obstacle & Item Spawning:</strong> Thuật toán sinh ngẫu nhiên chướng ngại vật với chiều cao thay đổi liên tục kết hợp tỷ lệ sinh trái tim hồi máu giúp cân bằng nhịp chơi.</li>
-                <li><strong>Health & Survival System:</strong> Xây dựng cơ chế trừ máu khi va chạm, hồi phục khi ăn tim và bộ đếm thời gian sinh tồn (Survival Timer).</li>
-                <li><strong>Persistence & State Management:</strong> Lưu trữ và truy xuất điểm kỷ lục High Score cục bộ thông qua PlayerPrefs; quản lý chuyển đổi State máy trạng thái game mượt mà.</li>
-                <li><strong>2D Sprite Animation & UI Canvas:</strong> Quản lý Sprite Animator chuyển động vỗ cánh của dơi, thiết kế giao diện HUD/Menu bằng Unity uGUI Canvas và âm thanh SFX phản hồi.</li>
+                <li><strong>Sinh Đối tượng Ngẫu nhiên:</strong> Thiết lập thuật toán sinh chướng ngại vật ngẫu nhiên theo trục độ cao kết hợp tỷ lệ xuất hiện vật phẩm hồi phục.</li>
+                <li><strong>Hệ thống Trạng thái & Sinh tồn:</strong> Xây dựng cơ chế giảm lượng máu khi phát hiện va chạm, tăng chỉ số khi thu thập vật phẩm và theo dõi thời gian tồn tại (Survival Timer).</li>
+                <li><strong>Lưu trữ Dữ liệu Cục bộ:</strong> Lưu trữ và truy xuất điểm số cao nhất cục bộ thông qua PlayerPrefs; quản lý chuyển đổi các trạng thái trò chơi (Game States).</li>
+                <li><strong>Hoạt ảnh 2D & Giao diện Canvas:</strong> Điều khiển hoạt ảnh 2D Sprite Animator, thiết lập giao diện HUD/Menu bằng Unity uGUI Canvas và phát âm thanh phản hồi tương ứng.</li>
               </ul>
             </div>
 

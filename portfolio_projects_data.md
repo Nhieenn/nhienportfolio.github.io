@@ -87,6 +87,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 - **Links:**
   - Gameplay Video: https://youtu.be/9lwIQXOVJlQ
   - Source Code (GitHub): https://github.com/Nhieenn/Blue-Square
+  - Download Game (Google Drive): https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf
 
 ---
 

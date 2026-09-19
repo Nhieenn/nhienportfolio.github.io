@@ -369,32 +369,57 @@
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Blue Square 2D</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Endless Runner phong cách Geometry Dash với cơ chế nhảy vượt chướng ngại vật nhịp điệu.
+                Endless Runner / Platformer tốc độ cao. Ứng dụng Generic Object Pooling, tối ưu Game Feel (Coyote Time, Jump Buffering) và Dynamic Theme.
               </p>
             </div>
             
             <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">Endless Runner</span>
+              <span class="tag">Gameplay & Systems</span>
               <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết</span>
+                <span>Chi tiết & Link</span>
                 <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
               </div>
             </div>
           </div>
 
           <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-2.5 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
+          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-500 block">• Kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-0.5 text-zinc-300">
-                <li>Raycast 2D Collision kiểm soát trạng thái nhảy.</li>
-                <li>Object Pooling chướng ngại vật liên tục.</li>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <p class="text-zinc-300 pl-2 leading-relaxed">
+                <strong>Unity Gameplay & Systems Developer:</strong> Lập trình Core Mechanics & Game Feel với cơ chế Coyote Time & Jump Buffering, hỗ trợ đa nền tảng New Input System (Keyboard, Touch, Mouse). Xây dựng ThemeManager đổi màu thế giới thời gian thực (Ngày → Chiều → Đêm) theo điểm số, độ khó gameSpeed tăng dần và Cinemachine Impulse Camera Shake.
+              </p>
+            </div>
+
+            <div>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
+                <li><strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng Generic Dictionary ObjectPool cho toàn bộ chướng ngại vật (ObstacleSpawner), triệt tiêu hoàn toàn Instantiate/Destroy trong game loop và loại bỏ hiện tượng GC Spike.</li>
+                <li><strong>Platformer Game Feel Optimization:</strong> Tính toán chính xác coyoteTime (cho phép nhảy sau khi rời mép đất) và jumpBufferTime (nhận trước lệnh nhảy), loại bỏ cảm giác input drop.</li>
+                <li><strong>Dynamic Color Cycle (Color.Lerp / HDR):</strong> Thuật toán nội suy màu toán học theo thang điểm, tự động cập nhật đồng bộ màu sắc của Camera Background, Sprite Renderers và Particle Systems.</li>
+                <li><strong>Seamless Infinite Scrolling & UI Toolkit:</strong> Cuộn nền vô tận sử dụng Mathf.Repeat kết hợp Sprite Bounds (GroundScroller). Sử dụng UI Toolkit tạo menu hiện đại và animation nhấp nháy kỷ lục mới.</li>
               </ul>
             </div>
+
             <div class="flex flex-wrap gap-1 pt-1">
               <span class="tag">Unity 2D</span>
-              <span class="tag">Raycast</span>
-              <span class="tag">Pooling</span>
+              <span class="tag">Generic Object Pooling</span>
+              <span class="tag">Coyote Time & Jump Buffer</span>
+              <span class="tag">Color.Lerp Theme</span>
+              <span class="tag">UI Toolkit</span>
+              <span class="tag">Cinemachine</span>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
+              <a href="https://youtu.be/9lwIQXOVJlQ" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-youtube-logo"></i>
+                <span>Xem Gameplay (YouTube)</span>
+              </a>
+              <a href="https://github.com/Nhieenn/Blue-Square" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-github-logo"></i>
+                <span>Mã nguồn (GitHub)</span>
+              </a>
             </div>
           </div>
         </div>

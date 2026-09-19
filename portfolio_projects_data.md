@@ -58,8 +58,21 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 ---
 
 ## 5. [Cá nhân] Blue Square 2D
-- **Thể loại:** 2D Endless Runner / Rhythm
-- (Đang chờ nạp chi tiết & link)
+- **Thể loại:** 2D Endless Runner / Platformer
+- **Vai trò:** Unity Gameplay & Systems Developer
+- **Các Module trực tiếp xây dựng:**
+  - Core Mechanics & Game Feel: Coyote Time & Jump Buffering (không input drop), New Input System (Keyboard, Touch, Mouse).
+  - ThemeManager đổi màu thế giới thời gian thực (Ngày → Chiều → Đêm) theo điểm số (Score-driven Color Lerp).
+  - Game Loop & State Management: Dynamic gameSpeed difficulty, High Score PlayerPrefs, UI Toolkit menu.
+  - Juiciness: Cinemachine Impulse Camera Shake, Particle System (bụi, crash, trail), AudioManager.
+- **Điểm Kỹ thuật Nổi bật:**
+  1. Generic Object Pooling (`UnityEngine.Pool.ObjectPool<GameObject>` Dictionary, triệt tiêu Instantiate/Destroy GC spikes).
+  2. Platformer Game Feel Optimization (`coyoteTime` & `jumpBufferTime`).
+  3. Dynamic Color Cycle & Mathematical Interpolation (`Color.Lerp` đồng bộ Camera, Sprites, Particles).
+  4. Seamless Infinite Scrolling (`Mathf.Repeat` GroundScroller) & UI Toolkit UIDocument.
+- **Links:**
+  - Gameplay Video: https://youtu.be/9lwIQXOVJlQ
+  - Source Code (GitHub): https://github.com/Nhieenn/Blue-Square
 
 ---
 

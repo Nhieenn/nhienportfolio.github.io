@@ -213,42 +213,66 @@
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Thực tập (A-Z)</span>
+                <span class="tag bg-[#272735] text-white">Dự án Thực tập (Doanh nghiệp)</span>
                 <span class="text-[11px] font-mono text-zinc-500">#02</span>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Ywondergreenfarm</h3>
+              <h3 class="text-white font-semibold text-base mb-1.5">Ywondergreenfarm — 3D Farm Simulation</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game nông trại 3D mô phỏng thực tế: trồng trọt, thu hoạch, hệ thống mùa vụ, NPC và kinh tế cửa hàng.
+                Game nông trại 3D mô phỏng thực tế. Xây dựng Core Gameplay, 3D Grid Building, mô phỏng Offline theo Unix Timestamp và UI Toolkit cho Mobile.
               </p>
             </div>
             
             <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">3D Simulation</span>
+              <span class="tag">Simulation & UI Architecture</span>
               <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết</span>
+                <span>Chi tiết & Link</span>
                 <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
               </div>
             </div>
           </div>
 
           <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-2.5 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
+          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-500 block">• Vai trò:</span>
-              <p class="text-zinc-300">Solo Developer — Lập trình toàn diện kịch bản, gameplay, vật phẩm 3D và giao diện cửa hàng.</p>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <p class="text-zinc-300 pl-2 leading-relaxed">
+                <strong>Unity Game Developer (Core Gameplay, Simulation & UI Architecture):</strong> Lập trình hệ thống Nông trại & Chăn nuôi (vòng đời cây trồng, thú nuôi, cơ chế sinh lão bệnh tử), Hệ thống Xây dựng & Quy hoạch lưới 3D (BuildGridManager), Lưu trữ dữ liệu Offline/Online theo Unix Timestamp, Giao diện Mobile bằng UI Toolkit (UXML/USS) và Rigging gắn dụng cụ vào Humanoid Animator.
+              </p>
             </div>
+
             <div>
-              <span class="text-zinc-500 block">• Kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-0.5 text-zinc-300">
-                <li>ScriptableObject quản lý mùa vụ & nông sản.</li>
-                <li>Grid Placement System canh tác.</li>
-                <li>Tối ưu Draw Calls & Lighting 3D.</li>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
+                <li><strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động sinh hàng trăm Asset dữ liệu cây trồng/vật phẩm chỉ với 1-click.</li>
+                <li><strong>Real-time Wall-Clock Simulation:</strong> Tính toán tiến trình phát triển nông trại khi thoát app (Offline Progression / Catch-up logic) theo Unix Epoch (RealNow) mà không cần chạy nền gây hao pin.</li>
+                <li><strong>3D Grid-based Placement & Spatial Math:</strong> Xử lý toán không gian (WorldToCell / CellToWorldCenter), Occupancy Matrix đa kích thước (1x1 đến giàn 20 ô) kết hợp URP Ghost Preview Shader bán trong suốt.</li>
+                <li><strong>Tối ưu hóa Mobile & UI Toolkit:</strong> Triệt tiêu rác bộ nhớ (GC Alloc) hàng frame, điều tiết tần suất cập nhật TextMesh 0.25s, giao diện Flexbox đáp ứng hoàn hảo Safe Area tai thỏ.</li>
               </ul>
             </div>
+
             <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 3D</span>
-              <span class="tag">ScriptableObject</span>
-              <span class="tag">Grid</span>
+              <span class="tag">Unity 3D (URP)</span>
+              <span class="tag">UI Toolkit (UXML/USS)</span>
+              <span class="tag">3D Grid Placement</span>
+              <span class="tag">Custom Editor Tools</span>
+              <span class="tag">Unix Offline Catch-up</span>
+              <span class="tag">Mobile Safe Area</span>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
+              <a href="https://youtu.be/yuotDzV7hLg" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-youtube-logo"></i>
+                <span>Xem Gameplay (YouTube)</span>
+              </a>
+              <a href="https://github.com/Lam-Phong-Tech/y-wonder-land" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-github-logo"></i>
+                <span>Mã nguồn (GitHub)</span>
+              </a>
+              <a href="https://drive.google.com/drive/folders/1THiF6xgpZSp_bmnNBV0KKXZvgJmNnBen?usp=drive_link" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-download-simple"></i>
+                <span>Tải game (Google Drive)</span>
+              </a>
             </div>
           </div>
         </div>

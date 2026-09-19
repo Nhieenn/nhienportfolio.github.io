@@ -39,7 +39,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
   3. 3D Grid-based Placement & Spatial Math (WorldToCell / CellToWorldCenter, Occupancy Matrix, Dynamic Ghost URP Shader).
   4. Performance Optimization & Zero GC Allocation hàng frame trên Mobile.
 - **Links:**
-  - Gameplay Video: https://youtu.be/yuotDzV7hLg
+  - Gameplay Video: https://youtu.be/jS0IoS0HUss
   - Source Code (GitHub): https://github.com/Lam-Phong-Tech/y-wonder-land
   - Download Game (Google Drive): https://drive.google.com/drive/folders/1THiF6xgpZSp_bmnNBV0KKXZvgJmNnBen?usp=drive_link
 

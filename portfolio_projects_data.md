@@ -107,4 +107,18 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ## 6. [Cá nhân] Flappy Bat
 - **Thể loại:** 2D Arcade
-- (Đang chờ nạp chi tiết & link)
+- **Vai trò:** Solo Developer (First Game Development Milestone)
+- **Các Module trực tiếp xây dựng:**
+  - Vòng đời Game Loop chuẩn (Menu, Playing, Game Over, Restart).
+  - Thuật toán sinh ngẫu nhiên chướng ngại vật theo chiều cao và cơ chế sinh trái tim hồi máu.
+  - Hệ thống trừ máu va chạm, hồi phục và bộ đếm thời gian sinh tồn (Survival Timer).
+  - Sprite Animation chuyển động dơi, giao diện HUD/Menu bằng Unity uGUI Canvas và lưu điểm High Score (PlayerPrefs).
+  - Đóng gói và xuất bản thành công trên Windows PC và Android.
+- **Điểm Kỹ thuật Nổi bật:**
+  1. Procedural Obstacle & Item Spawning (Sinh chướng ngại vật & trái tim hồi máu).
+  2. Health & Survival Timer System.
+  3. Persistence (PlayerPrefs HighScore) & State Management.
+  4. 2D Sprite Animation & uGUI Multi-platform Build.
+- **Links:**
+  - Gameplay Video: https://youtu.be/alanA02fs-0
+  - Download Game (Google Drive): https://drive.google.com/drive/u/0/folders/17yzgNNZ0yk9-4AWSFAlgq63_19fA2_vh

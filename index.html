@@ -490,33 +490,57 @@
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Flappy Bat</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Arcade 2D hoàn thiện Game Loop, Sprite Animation và đóng gói đa nền tảng PC & Android.
+                Game Arcade 2D hoàn thiện Game Loop chuẩn trong Unity, Sprite Animation, cơ chế ăn tim hồi máu và đóng gói đa nền tảng PC & Android.
               </p>
             </div>
             
             <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
               <span class="tag">2D Arcade</span>
               <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết</span>
+                <span>Chi tiết & Link</span>
                 <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
               </div>
             </div>
           </div>
 
           <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-2.5 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
+          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-500 block">• Kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-0.5 text-zinc-300">
-                <li>Game Loop & State Control.</li>
-                <li>Lưu điểm High Score bằng PlayerPrefs.</li>
-                <li>Build Windows PC & Android APK.</li>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <p class="text-zinc-300 pl-2 leading-relaxed">
+                <strong>Solo Developer (First Game Development Milestone):</strong> Tự thiết kế và lập trình trọn vẹn vòng đời game loop (Menu, Playing, Game Over, Restart), cơ chế sinh ngẫu nhiên chướng ngại vật theo chiều cao biến thiên, cơ chế sinh trái tim nhặt hồi máu, bộ đếm thời gian sinh tồn và xuất bản đa nền tảng.
+              </p>
+            </div>
+
+            <div>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
+                <li><strong>Procedural Obstacle & Item Spawning:</strong> Thuật toán sinh ngẫu nhiên chướng ngại vật với chiều cao thay đổi liên tục kết hợp tỷ lệ sinh trái tim hồi máu giúp cân bằng nhịp chơi.</li>
+                <li><strong>Health & Survival System:</strong> Xây dựng cơ chế trừ máu khi va chạm, hồi phục khi ăn tim và bộ đếm thời gian sinh tồn (Survival Timer).</li>
+                <li><strong>Persistence & State Management:</strong> Lưu trữ và truy xuất điểm kỷ lục High Score cục bộ thông qua PlayerPrefs; quản lý chuyển đổi State máy trạng thái game mượt mà.</li>
+                <li><strong>2D Sprite Animation & UI Canvas:</strong> Quản lý Sprite Animator chuyển động vỗ cánh của dơi, thiết kế giao diện HUD/Menu bằng Unity uGUI Canvas và âm thanh SFX phản hồi.</li>
               </ul>
             </div>
+
             <div class="flex flex-wrap gap-1 pt-1">
               <span class="tag">Unity 2D</span>
-              <span class="tag">Game Loop</span>
-              <span class="tag">Android Build</span>
+              <span class="tag">2D Sprite Animator</span>
+              <span class="tag">uGUI Canvas</span>
+              <span class="tag">Procedural Spawning</span>
+              <span class="tag">PlayerPrefs HighScore</span>
+              <span class="tag">Android & Windows Build</span>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
+              <a href="https://youtu.be/alanA02fs-0" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-youtube-logo"></i>
+                <span>Xem Gameplay (YouTube)</span>
+              </a>
+              <a href="https://drive.google.com/drive/u/0/folders/17yzgNNZ0yk9-4AWSFAlgq63_19fA2_vh" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-download-simple"></i>
+                <span>Tải game (Google Drive)</span>
+              </a>
             </div>
           </div>
         </div>

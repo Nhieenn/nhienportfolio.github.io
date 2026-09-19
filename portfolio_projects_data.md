@@ -53,7 +53,21 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ## 4. [Cá nhân] Merge Fruit 3D
 - **Thể loại:** 3D Physics Puzzle / Merge Game
-- (Đang chờ nạp chi tiết & link)
+- **Vai trò:** Unity Gameplay & Physics Developer
+- **Các Module trực tiếp xây dựng:**
+  - Phát triển Core Gameplay & Cơ chế Hợp nhất (Merge Evolution Logic, tính điểm lũy tiến, particle FX).
+  - Điều khiển & Tương tác Vật lý (Physics.Raycast + LineRenderer vẽ đường ngắm dự đoán quỹ đạo rơi tự do, chuyển đổi isKinematic sang Rigidbody khi thả).
+  - Hệ thống Cảnh báo & Điều kiện Thua (Hazard Sensor Trigger qua OnTriggerEnter/Exit với danh sách fruitsInZone, hiệu ứng chớp sáng Mathf.PingPong, Camera Shake).
+  - Giao diện UI Toolkit (UXML/USS) và hệ thống Audio/Game Manager.
+- **Điểm Kỹ thuật Nổi bật:**
+  1. Vật lý 3D & Xử lý Quỹ đạo (Physics.Raycast + LineRenderer real-time aim line).
+  2. Tối ưu hóa Vùng Cảm biến & Cảnh báo (Optimized Hazard Trigger, không quét FindObjects hàng frame, triệt tiêu GC Alloc).
+  3. Giao diện thế hệ mới với Unity UI Toolkit (UXML/USS, dynamic class AddToClassList animation).
+  4. Kiến trúc Singleton & Đồng bộ Luồng an toàn với Coroutines.
+- **Links:**
+  - Gameplay Video: https://youtu.be/oJn-49k7GLs
+  - Source Code (GitHub): https://github.com/Nhieenn/Merge-Fruit-1
+  - Download Game (Google Drive): https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf
 
 ---
 

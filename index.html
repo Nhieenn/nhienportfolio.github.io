@@ -138,13 +138,83 @@
       <!-- 3x3 GRID CONTAINER -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
 
-        <!-- CARD 1: YWONDERGREENFARM -->
+        <!-- CARD 1: BULLET HELL: PIXEL SURVIVAL -->
+        <div class="project-card" onclick="toggleProject(this)">
+          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp (Tâm huyết)</span>
+                <span class="text-[11px] font-mono text-zinc-500">#01</span>
+              </div>
+              <h3 class="text-white font-semibold text-base mb-1.5">Bullet Hell: Pixel Survival</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
+                Game Rogue-like sinh tồn đạn đạo 2D. Ứng dụng kiến trúc Unity 6 UI Toolkit (UXML/USS) thay thế uGUI, tối ưu 3–5 Draw Calls và bản địa hóa 5 ngôn ngữ.
+              </p>
+            </div>
+            
+            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
+              <span class="tag">UI/UX & Client Dev</span>
+              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
+                <span>Chi tiết & Link</span>
+                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXPANDABLE DETAILS -->
+          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
+            <div>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <p class="text-zinc-300 pl-2 leading-relaxed">
+                <strong>UI/UX Engineer & Client Developer:</strong> Xây dựng toàn bộ hệ thống giao diện (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss, HUD, Tutorial Film Reel) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp Firebase Auth ngầm trong màn hình Loading.
+              </p>
+            </div>
+
+            <div>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
+                <li><strong>UI Toolkit & 3-Layer Pixel Art:</strong> Giảm Draw Calls từ 40–80 xuống chỉ <strong>3–5 Draw Calls/màn hình</strong> nhờ Auto-Batching và Sprite Atlas. Cách ly animation trên GPU Matrix Transform, duy trì mượt mà 60 FPS.</li>
+                <li><strong>Event-Driven / EventBus Pattern:</strong> Kết nối lỏng (Loose Coupling) giữa UI với Gameplay, Audio, Quest; loại bỏ hoàn toàn [SerializeField]/FindObject, triệt tiêu lỗi NullReferenceException.</li>
+                <li><strong>Bản địa hóa Reactive (5 Ngôn ngữ):</strong> Nạp từ điển JSON (Việt, Anh, Tây Ban Nha, Nhật, Trung), đổi ngôn ngữ tức thì không cần reload Scene.</li>
+                <li><strong>Chống vỡ Layout CJK & Font Fallback Chain:</strong> Flexbox thích ứng, Dynamic SDF Font Atlas xử lý triệt để lỗi ô vuông (□ - Tofu character) trên mobile.</li>
+                <li><strong>Gatekeeper Pattern:</strong> Tự động kiểm duyệt dữ liệu chuỗi thô và kích hoạt từ điển tiếng Anh dự phòng (Anti-Leak Fallback) khi gặp sự cố mạng.</li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-1 pt-1">
+              <span class="tag">Unity 6 UI Toolkit</span>
+              <span class="tag">UXML / USS</span>
+              <span class="tag">EventBus Pattern</span>
+              <span class="tag">5 Languages Localization</span>
+              <span class="tag">3-5 Draw Calls</span>
+              <span class="tag">Firebase Auth</span>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
+              <a href="https://youtu.be/IdTHQMXIXbs?si=sJUEOIXIms4EfcpY" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-youtube-logo"></i>
+                <span>Xem Gameplay (YouTube)</span>
+              </a>
+              <a href="https://gitlab.com/thanhcu06-group/duantotnghiep" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-git-branch"></i>
+                <span>Mã nguồn (GitLab)</span>
+              </a>
+              <a href="https://drive.google.com/file/d/1BPu1iA8iUxGNkAoJjSVWzMBlLd4GjR5-/view?usp=drive_link" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-download-simple"></i>
+                <span>Tải game (Google Drive)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: YWONDERGREENFARM -->
         <div class="project-card" onclick="toggleProject(this)">
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
                 <span class="tag bg-[#272735] text-white">Thực tập (A-Z)</span>
-                <span class="text-[11px] font-mono text-zinc-500">#01</span>
+                <span class="text-[11px] font-mono text-zinc-500">#02</span>
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Ywondergreenfarm</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
@@ -179,51 +249,6 @@
               <span class="tag">Unity 3D</span>
               <span class="tag">ScriptableObject</span>
               <span class="tag">Grid</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2: BULLET HELL 2D -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp</span>
-                <span class="text-[11px] font-mono text-zinc-500">#02</span>
-              </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Bullet Hell 2D</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game sinh tồn đạn đạo mãnh liệt kết hợp cơ chế nâng cấp thẻ bài ngẫu nhiên rogue-like.
-              </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">2D Rogue-like</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-2.5 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-500 block">• Vai trò:</span>
-              <p class="text-zinc-300">UI/UX Architecture & Bản địa hóa (Localization) trong nhóm tốt nghiệp.</p>
-            </div>
-            <div>
-              <span class="text-zinc-500 block">• Kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-0.5 text-zinc-300">
-                <li>UIManager Stack điều phối HUD/Menu.</li>
-                <li>Tách Canvas động/tĩnh triệt tiêu drop FPS.</li>
-                <li>Localization Runtime & TextMeshPro UTF-8.</li>
-              </ul>
-            </div>
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 2D</span>
-              <span class="tag">uGUI</span>
-              <span class="tag">Localization</span>
             </div>
           </div>
         </div>

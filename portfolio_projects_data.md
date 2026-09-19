@@ -4,7 +4,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 1. [Đồ án Tốt nghiệp] Bullet Hell: Pixel Survival (Tâm huyết nhất)
+## 1. [Đồ án Tốt nghiệp] Bullet Hell
 - **Thể loại:** 2D Rogue-like Bullet Hell
 - **Vai trò:** UI/UX Engineer & Client Developer
 - **Các Module trực tiếp xây dựng:**
@@ -24,7 +24,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 2. [Internship / Doanh nghiệp] Ywondergreenfarm — 3D Farm Simulation
+## 2. [Internship / Doanh nghiệp] Y Wonder Green Farm
 - **Thể loại:** 3D Farm Simulation (URP)
 - **Vai trò:** Unity Game Developer (Core Gameplay, Simulation & UI Architecture)
 - **Các Module trực tiếp xây dựng:**

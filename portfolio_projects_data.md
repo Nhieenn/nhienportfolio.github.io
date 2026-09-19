@@ -46,8 +46,22 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 ---
 
 ## 3. [Cuộc thi / Nhóm] Thành Lũy Việt
-- **Thể loại:** Tower Defense
-- (Đang chờ nạp chi tiết & link)
+- **Thể loại:** 2D Tower Defense (Đề tài Lịch sử)
+- **Vai trò:** Gameplay & Core Mechanics Programmer (Unity / C#)
+- **Các Module trực tiếp xây dựng:**
+  - Hệ thống Xây dựng & Tương tác Tháp (BuildableArea, TowerActionMenu, TowerBuildMenu, nâng cấp Lv1→3, bán tháp hoàn ô đất).
+  - Hệ thống Chiến đấu & Bắn đạn (TowerShooter quét tầm bắn, Fire Rate, Projectile va chạm trừ máu).
+  - Hệ thống Kẻ địch & Đợt tấn công (Enemy di chuyển theo Waypoints, Mathf.Atan2 xoay hướng, EnemySpawner).
+  - Hệ thống Bẫy Chiến thuật (TrapMine mìn nổ AOE, TrapSpike chông làm chậm/sát thương).
+  - Hệ thống Tư liệu Lịch sử (HistoryData, HistoryPanel lưu và hiển thị 10 chiến dịch lịch sử).
+- **Điểm Kỹ thuật Nổi bật:**
+  1. Data-Driven Architecture với ScriptableObject (TowerData, EnemyData, WaveConfigSO, TrapData cân bằng Editor).
+  2. World Space to Screen Space & Dynamic UI Canvas Matching (Mathf.Clamp chống tràn viền trên mọi tỷ lệ phân giải).
+  3. Xử lý Vật lý 2D & Sát thương AOE (Physics2D.OverlapCircleAll & OnTriggerEnter2D nổ diện rộng).
+  4. Design Pattern (Singleton DontDestroyOnLoad cho HistoryData xuyên suốt 10 màn chơi, Component-Based logic).
+- **Links:**
+  - Gameplay Video: https://youtu.be/u7bke6Jkrcc
+  - Source Code (GitHub): https://github.com/Nhieenn/ThanhLuyViet
 
 ---
 

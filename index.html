@@ -282,38 +282,62 @@
           <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi</span>
+                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi (Nhóm)</span>
                 <span class="text-[11px] font-mono text-zinc-500">#03</span>
               </div>
               <h3 class="text-white font-semibold text-base mb-1.5">Thành Lũy Việt</h3>
               <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Game thủ thành chiến thuật đề tài lịch sử văn hóa Việt Nam thực hiện cùng nhóm dự thi.
+                Game Tower Defense đề tài lịch sử Việt Nam (10 chiến dịch). Xây dựng cơ chế đặt/nâng cấp tháp, đạn đạo, bẫy chiến thuật AOE và nạp dữ liệu ScriptableObject.
               </p>
             </div>
             
             <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">Tower Defense</span>
+              <span class="tag">Gameplay & Mechanics</span>
               <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết</span>
+                <span>Chi tiết & Link</span>
                 <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
               </div>
             </div>
           </div>
 
           <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-2.5 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
+          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
             <div>
-              <span class="text-zinc-500 block">• Mô tả & Kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-0.5 text-zinc-300">
-                <li>Thuật toán A* Pathfinding tìm đường cho lính.</li>
-                <li>Hệ thống đặt và nâng cấp tháp phòng thủ.</li>
-                <li>Phối hợp nhóm quản lý qua Git.</li>
+              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Module xây dựng:</span>
+              <p class="text-zinc-300 pl-2 leading-relaxed">
+                <strong>Gameplay & Core Mechanics Programmer:</strong> Lập trình hệ thống Đặt tháp & Tương tác Menu ngữ cảnh (Nâng cấp Lv1→3, Hủy tháp hoàn ô đất), Hệ thống Tác chiến tháp (quét mục tiêu, Fire Rate, đạn bay va chạm), Quái & Đợt tấn công theo Waypoints (Mathf.Atan2 xoay hướng), Hệ thống Bẫy chiến thuật (Bẫy mìn nổ AOE, Bẫy chông làm chậm) và Module tư liệu lịch sử 10 chiến dịch.
+              </p>
+            </div>
+
+            <div>
+              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật nổi bật:</span>
+              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
+                <li><strong>Data-Driven Architecture (ScriptableObject):</strong> Tách biệt toàn bộ cấu hình tháp (TowerData), quái (EnemyData), đợt quái (WaveConfigSO) và bẫy (TrapData) ra khỏi source code giúp cân bằng chỉ số trực quan trên Editor.</li>
+                <li><strong>World Space to Screen Space & Dynamic UI Matching:</strong> Ánh xạ vị trí bấm chọn tháp từ World sang Screen Space, áp dụng Mathf.Clamp chống tràn viền trên mọi tỷ lệ phân giải màn hình.</li>
+                <li><strong>Vật lý 2D & Sát thương AOE:</strong> Ứng dụng Physics2D.OverlapCircleAll và OnTriggerEnter2D trong module bẫy mìn phát hiện và kích nổ sát thương diện rộng.</li>
+                <li><strong>Design Pattern (Singleton & Component-Based):</strong> Sử dụng Singleton DontDestroyOnLoad cho HistoryData xuyên suốt 10 màn chơi; tách rời logic hiển thị máu (Hpbar_Enemy) và logic trạng thái thực thể.</li>
               </ul>
             </div>
+
             <div class="flex flex-wrap gap-1 pt-1">
               <span class="tag">Unity 2D</span>
-              <span class="tag">Pathfinding</span>
-              <span class="tag">Grid System</span>
+              <span class="tag">Tower Defense</span>
+              <span class="tag">ScriptableObject Data-Driven</span>
+              <span class="tag">AOE Physics2D</span>
+              <span class="tag">Waypoints Spawner</span>
+              <span class="tag">Singleton</span>
+            </div>
+
+            <!-- Action Links -->
+            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
+              <a href="https://youtu.be/u7bke6Jkrcc" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-youtube-logo"></i>
+                <span>Xem Gameplay (YouTube)</span>
+              </a>
+              <a href="https://github.com/Nhieenn/ThanhLuyViet" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
+                <i class="ph ph-github-logo"></i>
+                <span>Mã nguồn (GitHub)</span>
+              </a>
             </div>
           </div>
         </div>

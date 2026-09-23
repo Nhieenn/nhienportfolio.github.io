@@ -4,7 +4,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 1. [Đồ án Tốt nghiệp] Bullet Hell
+## 1. [Đồ án Tốt nghiệp] Bullet Hell (24/05/2026 – 03/09/2026)
 - **Thể loại:** 2D Rogue-like Bullet Hell
 - **Vai trò:** UI/UX Engineer & Client Developer
 - **Các Module trực tiếp xây dựng:**
@@ -24,7 +24,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 2. [Internship / Doanh nghiệp] Y Wonder Green Farm
+## 2. [Internship / Doanh nghiệp] Y Wonder Green Farm (11/05/2026 – 17/08/2026)
 - **Thể loại:** 3D Farm Simulation (URP)
 - **Vai trò:** Unity Game Developer (Core Gameplay, Simulation & UI Architecture)
 - **Các Module trực tiếp xây dựng:**
@@ -45,7 +45,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 3. [Cuộc thi / Nhóm] Thành Lũy Việt
+## 3. [Cuộc thi / Nhóm] Thành Lũy Việt (06/2025 – 08/2025)
 - **Thể loại:** 2D Tower Defense (Đề tài Lịch sử)
 - **Vai trò:** Gameplay & Core Mechanics Programmer (Unity / C#)
 - **Các Module trực tiếp xây dựng:**
@@ -65,7 +65,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 4. [Cá nhân] Merge Fruit 3D
+## 4. [Cá nhân] Merge Fruit 3D (02/03/2026 – 09/03/2026)
 - **Thể loại:** 3D Physics Puzzle / Merge Game
 - **Vai trò:** Unity Gameplay & Physics Developer
 - **Các Module trực tiếp xây dựng:**
@@ -85,7 +85,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 5. [Cá nhân] Blue Square 2D
+## 5. [Cá nhân] Blue Square 2D (12/03/2026 – 15/03/2026)
 - **Thể loại:** 2D Endless Runner / Platformer
 - **Vai trò:** Unity Gameplay & Systems Developer
 - **Các Module trực tiếp xây dựng:**
@@ -105,7 +105,7 @@ Tài liệu này lưu trữ toàn bộ thông tin chi tiết kỹ thuật của 
 
 ---
 
-## 6. [Cá nhân] Flappy Bat
+## 6. [Cá nhân] Flappy Bat (05/2025 – 06/2025)
 - **Thể loại:** 2D Arcade
 - **Vai trò:** Solo Developer (First Game Development Milestone)
 - **Các Module trực tiếp xây dựng:**

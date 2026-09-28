@@ -59,7 +59,7 @@
         <div class="grid-featured">
 
           <!-- CARD 1: BULLET HELL -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-featured">
               <img src="assets/images/BulletHell.jpg" alt="Bullet Hell Gameplay" loading="lazy" />
             </div>
@@ -148,7 +148,7 @@
           </article>
 
           <!-- CARD 2: Y WONDER GREEN FARM -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-featured card-media-contain">
               <img src="assets/images/YwonderGreenFarm.jpg" alt="Y Wonder Green Farm" loading="lazy" />
             </div>
@@ -254,7 +254,7 @@
         <div class="grid-compact">
 
           <!-- CARD 3: THÀNH LŨY VIỆT -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-compact">
               <img src="assets/images/ThanhLuyViet.jpg" alt="Thành Lũy Việt" loading="lazy" />
             </div>
@@ -334,7 +334,7 @@
           </article>
 
           <!-- CARD 4: MERGE FRUIT 3D -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-compact">
               <img src="assets/images/MergeFruit.png" alt="Merge Fruit 3D" loading="lazy" />
             </div>
@@ -419,7 +419,7 @@
           </article>
 
           <!-- CARD 5: BLUE SQUARE 2D -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-compact">
               <img src="assets/images/BlueSquare.png" alt="Blue Square 2D" loading="lazy" />
             </div>
@@ -504,7 +504,7 @@
           </article>
 
           <!-- CARD 6: FLAPPY BAT -->
-          <article class="project-card" onclick="toggleProject(this)">
+          <article class="project-card" tabindex="0" onclick="toggleProject(this)" onkeydown="handleCardKey(event, this)">
             <div class="card-media-compact card-media-contain">
               <img src="assets/images/FlappyBat.png" alt="Flappy Bat" loading="lazy" />
             </div>
@@ -600,6 +600,13 @@
   <script>
     function toggleProject(cardElement) {
       cardElement.classList.toggle('active');
+    }
+
+    function handleCardKey(event, cardElement) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleProject(cardElement);
+      }
     }
 
     function copyEmail() {

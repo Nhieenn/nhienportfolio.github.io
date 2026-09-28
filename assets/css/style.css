@@ -186,6 +186,22 @@ a {
   color: var(--text-accent);
 }
 
+.btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.btn-solid:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.btn-outline:focus-visible {
+  outline: 2px solid #a1a1aa;
+  outline-offset: 2px;
+  border-color: #525260;
+}
+
 .btn-sm {
   padding: 5px 10px;
   font-size: 11px;
@@ -272,13 +288,21 @@ a {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
+  transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
   overflow: hidden;
   height: fit-content;
+  outline: none;
 }
 
 .project-card:hover {
   border-color: var(--border-medium);
+  background-color: var(--bg-surface-hover);
+}
+
+.project-card:focus-visible {
+  border-color: #62627a;
+  outline: 2px solid #525266;
+  outline-offset: 2px;
   background-color: var(--bg-surface-hover);
 }
 

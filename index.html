@@ -5,600 +5,598 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trần Đức Nhiên — Unity Game Developer</title>
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <style>
-    body {
-      background-color: #0d0d11;
-      color: #e4e4e7;
-      font-family: 'Geist', system-ui, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .project-card {
-      background-color: #14141a;
-      border: 1px solid #272732;
-      border-radius: 6px;
-      transition: border-color 0.15s ease, background-color 0.15s ease;
-      display: flex;
-      flex-direction: column;
-      height: fit-content;
-    }
-    .project-card:hover {
-      border-color: #3f3f50;
-      background-color: #17171f;
-    }
-    .project-card.active {
-      border-color: #63637a;
-      background-color: #181822;
-    }
-
-    .tag {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10.5px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background-color: #1c1c24;
-      border: 1px solid #2e2e3a;
-      color: #a1a1aa;
-    }
-
-    .btn-solid {
-      background-color: #ffffff;
-      color: #000000;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 6px 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background-color 0.15s ease;
-    }
-    .btn-solid:hover {
-      background-color: #e4e4e7;
-    }
-
-    .btn-outline {
-      background-color: #1c1c24;
-      color: #d4d4d8;
-      border: 1px solid #2e2e3a;
-      border-radius: 5px;
-      font-size: 12px;
-      padding: 6px 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease;
-    }
-    .btn-outline:hover {
-      background-color: #272733;
-      border-color: #3f3f52;
-      color: #ffffff;
-    }
-
-    .details-content {
-      display: none;
-    }
-    .project-card.active .details-content {
-      display: block;
-    }
-    .project-card.active .chevron-icon {
-      transform: rotate(180deg);
-    }
-  </style>
+  <!-- Custom Stylesheet (Pure CSS, 0ms latency, No Tailwind CDN) -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="p-6 sm:p-10 lg:p-12 selection:bg-white selection:text-black">
+<body>
 
-  <div class="max-w-6xl mx-auto">
+  <div class="container">
 
-    <!-- HEADER / CONTACT INFO ONLY -->
-    <header class="pb-8 mb-8 border-b border-[#272732]">
-      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4">
-        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-          Trần Đức Nhiên
-        </h1>
-        <span class="font-mono text-xs text-zinc-400">
-          Unity Game Developer
-        </span>
+    <!-- HEADER / CONTACT INFO -->
+    <header class="header">
+      <div class="header-top">
+        <h1 class="header-name">Trần Đức Nhiên</h1>
+        <span class="header-title">Unity Game Developer</span>
       </div>
 
-      <!-- Contact Buttons -->
-      <div class="flex flex-wrap items-center gap-2.5 font-mono">
-        <a href="mailto:ducnhiendz2006@gmail.com" class="btn-solid">
+      <div class="contact-bar">
+        <a href="mailto:ducnhiendz2006@gmail.com" class="btn btn-solid">
           <i class="ph ph-envelope"></i>
           <span>ducnhiendz2006@gmail.com</span>
         </a>
-        <a href="https://github.com/Nhieenn" target="_blank" class="btn-outline">
+        <a href="https://github.com/Nhieenn" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
           <i class="ph ph-github-logo"></i>
           <span>GitHub: Nhieenn</span>
+          <i class="ph ph-arrow-up-right" style="font-size: 11px;"></i>
         </a>
-        <button onclick="copyEmail()" id="copyBtn" class="btn-outline">
+        <button onclick="copyEmail()" id="copyBtn" class="btn btn-outline">
           <i class="ph ph-copy"></i>
           <span id="copyText">Sao chép email</span>
         </button>
       </div>
     </header>
 
-    <!-- PROJECTS SECTION (3x3 GRID LAYOUT) -->
-    <section>
-      <div class="flex items-center justify-between mb-5">
-        <h2 class="text-xs font-semibold tracking-wider uppercase text-zinc-400 font-mono">
-          Danh mục dự án
-        </h2>
-        <span class="text-xs font-mono text-zinc-500">6 Projects</span>
-      </div>
+    <!-- MAIN CONTENT -->
+    <main>
 
-      <!-- 3x3 GRID CONTAINER -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+      <!-- ====================================================================
+           SECTION 1: FEATURED ENGINEERING PROJECTS (TIER 1)
+           ==================================================================== -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-label section-tag-featured">Dự án Tiêu biểu (Featured Projects)</h2>
+          <span class="section-count">2 Projects</span>
+        </div>
 
-        <!-- CARD 1: BULLET HELL -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#181822] border-b border-[#272732] rounded-t-[5px]">
-            <img src="assets/images/BulletHell.jpg" alt="Bullet Hell" class="w-full h-full object-cover object-center" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đồ án Tốt nghiệp</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+        <div class="grid-featured">
+
+          <!-- CARD 1: BULLET HELL -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-featured">
+              <img src="assets/images/BulletHell.jpg" alt="Bullet Hell Gameplay" loading="lazy" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category badge-featured">Đồ án Tốt nghiệp</span>
+                <div class="meta-date-index">
                   <span>24/05/2026 – 03/09/2026</span>
                   <span>·</span>
                   <span>#01</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Bullet Hell</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi thể loại Rogue-like sinh tồn 2D. Ứng dụng kiến trúc Unity 6 UI Toolkit (UXML/USS), tối ưu hóa còn 3–5 Draw Calls và tích hợp hệ thống bản địa hóa 5 ngôn ngữ.
+
+              <h3 class="card-title">Bullet Hell</h3>
+              <p class="card-desc">
+                Trò chơi Rogue-like sinh tồn 2D. Xây dựng toàn bộ hệ thống giao diện bằng Unity 6 UI Toolkit thế hệ mới, tối ưu hóa mức tiêu thụ còn 3–5 Draw Calls và tích hợp engine bản địa hóa 5 ngôn ngữ thời gian thực.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">UI/UX & Client Dev</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech Stack:</span>
+                  <span class="spec-value">Unity 6 · UI Toolkit (UXML/USS) · EventBus · Firebase Auth</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Metrics:</span>
+                  <span class="spec-value">3–5 Draw Calls / màn hình · 60 FPS Stable Mobile</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">UI/UX & Client Developer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết kỹ thuật</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>UI/UX Engineer & Client Developer:</strong> Xây dựng hệ thống giao diện người dùng (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss, HUD, Tutorial) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp xác thực tài khoản Firebase Auth trong quy trình tải dữ liệu ban đầu.
-              </p>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Thiết kế và lập trình hoàn chỉnh hệ thống Client UI (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss Flow, HUD, Interactive Tutorial) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp module xác thực ngầm Firebase Auth trong quy trình nạp dữ liệu.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>Tối ưu hóa UI Rendering:</strong> Kết hợp UI Toolkit Auto-Batching và Sprite Atlas, cô lập chuyển động trên GPU Matrix Transform; giảm tải từ 40–80 lệnh vẽ xuống <strong>3–5 Draw Calls/màn hình</strong>, giải phóng CPU và duy trì 60 FPS.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Kiến trúc Event-Driven (EventBus):</strong> Xây dựng kênh điều phối sự kiện phân tán giữa UI, Gameplay, Audio và Quests; loại bỏ hoàn toàn tham chiếu trực tiếp ([SerializeField] / FindObject), triệt tiêu lỗi NullReferenceException.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Hệ thống Bản địa hóa 5 Ngôn ngữ:</strong> Nạp từ điển JSON thời gian thực (Việt, Anh, Tây Ban Nha, Nhật, Trung). Xử lý vỡ layout chữ tượng hình CJK bằng Flexbox và Dynamic SDF Font Atlas; tích hợp Fallback Chain sang tiếng Anh khi mất kết nối mạng.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-actions">
+                    <a href="https://youtu.be/IdTHQMXIXbs?si=sJUEOIXIms4EfcpY" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://gitlab.com/thanhcu06-group/duantotnghiep" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-git-branch"></i>
+                      <span>Mã nguồn (GitLab)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1BPu1iA8iUxGNkAoJjSVWzMBlLd4GjR5-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-download-simple"></i>
+                      <span>Tải game (Drive)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2: Y WONDER GREEN FARM -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-featured card-media-contain">
+              <img src="assets/images/YwonderGreenFarm.jpg" alt="Y Wonder Green Farm" loading="lazy" />
             </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>UI Toolkit & 3-Layer Pixel Art:</strong> Giảm số lượng lệnh vẽ từ 40–80 xuống <strong>3–5 Draw Calls/màn hình</strong> thông qua Auto-Batching và Sprite Atlas. Cách ly chuyển động trên GPU Matrix Transform, duy trì tốc độ khung hình 60 FPS.</li>
-                <li><strong>Event-Driven / EventBus Pattern:</strong> Thiết lập cơ chế phân phối sự kiện trung tâm (Loose Coupling) giữa UI và Gameplay, Audio, Quest; loại bỏ việc tham chiếu trực tiếp qua [SerializeField]/FindObject, phòng ngừa lỗi NullReferenceException.</li>
-                <li><strong>Hệ thống Bản địa hóa (5 Ngôn ngữ):</strong> Nạp dữ liệu từ điển JSON (Việt, Anh, Tây Ban Nha, Nhật, Trung), hỗ trợ chuyển đổi ngôn ngữ thời gian thực không yêu cầu tải lại Scene.</li>
-                <li><strong>Xử lý Typography & Layout Đa ngữ:</strong> Ứng dụng Flexbox và Dynamic SDF Font Atlas xử lý lỗi hiển thị ký tự tượng hình (□ - Tofu character) trên thiết bị di động.</li>
-                <li><strong>Gatekeeper Pattern:</strong> Kiểm duyệt dữ liệu chuỗi hiển thị và kích hoạt từ điển tiếng Anh dự phòng (Anti-Leak Fallback) khi xảy ra lỗi kết nối.</li>
-              </ul>
-            </div>
-
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 6 UI Toolkit</span>
-              <span class="tag">UXML / USS</span>
-              <span class="tag">EventBus Pattern</span>
-              <span class="tag">5 Languages Localization</span>
-              <span class="tag">3-5 Draw Calls</span>
-              <span class="tag">Firebase Auth</span>
-            </div>
-
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/IdTHQMXIXbs?si=sJUEOIXIms4EfcpY" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://gitlab.com/thanhcu06-group/duantotnghiep" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-git-branch"></i>
-                <span>Mã nguồn (GitLab)</span>
-              </a>
-              <a href="https://drive.google.com/file/d/1BPu1iA8iUxGNkAoJjSVWzMBlLd4GjR5-/view?usp=drive_link" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-download-simple"></i>
-                <span>Tải game (Google Drive)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2: Y WONDER GREEN FARM -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#111116] border-b border-[#272732] rounded-t-[5px] flex items-center justify-center">
-            <img src="assets/images/YwonderGreenFarm.jpg" alt="Y Wonder Green Farm" class="w-full h-full object-contain p-1" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Dự án Thực tập</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category badge-featured">Dự án Thực tập</span>
+                <div class="meta-date-index">
                   <span>11/05/2026 – 17/08/2026</span>
                   <span>·</span>
                   <span>#02</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Y Wonder Green Farm</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi mô phỏng nông trại 3D. Triển khai Core Gameplay, hệ thống xây dựng 3D Grid, tính toán tiến trình Offline theo Unix Timestamp và giao diện UI Toolkit cho Mobile.
+
+              <h3 class="card-title">Y Wonder Green Farm</h3>
+              <p class="card-desc">
+                Trò chơi mô phỏng nông trại 3D (URP). Phát triển Core Gameplay, hệ thống đặt công trình 3D Grid, thuật toán tính toán tiến trình Offline theo Unix Timestamp và giao diện UI Toolkit cho Mobile.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">Simulation & UI Architecture</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech Stack:</span>
+                  <span class="spec-value">Unity 3D (URP) · UI Toolkit · Custom Editor Tools</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Architecture:</span>
+                  <span class="spec-value">3D Spatial Grid · Unix Offline Catch-up · Zero GC</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">Core Gameplay & Simulation Developer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết kỹ thuật</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Game Developer (Core Gameplay, Simulation & UI Architecture):</strong> Lập trình hệ thống Nông trại & Chăn nuôi (chu kỳ sinh trưởng cây trồng, vật nuôi, cơ chế suy giảm trạng thái), Hệ thống Xây dựng & Quy hoạch lưới 3D (BuildGridManager), Lưu trữ dữ liệu Offline/Online theo Unix Timestamp, Giao diện Mobile bằng UI Toolkit (UXML/USS) và Rigging dụng cụ vào Humanoid Animator.
-              </p>
-            </div>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Lập trình hệ thống Nông trại & Chăn nuôi (chu kỳ sinh trưởng cây trồng, vật nuôi, suy giảm trạng thái), Hệ thống Xây dựng & Quy hoạch lưới 3D (BuildGridManager), Đồng bộ dữ liệu Offline theo Unix Timestamp, Giao diện Mobile UI Toolkit và Rigging dụng cụ vào Humanoid Animator.
+                    </p>
+                  </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động hóa quá trình khởi tạo Asset dữ liệu cây trồng và vật phẩm.</li>
-                <li><strong>Real-time Wall-Clock Simulation:</strong> Tính toán tiến trình phát triển nông trại khi thoát ứng dụng (Offline Progression / Catch-up logic) theo Unix Epoch (RealNow) mà không duy trì tác vụ nền.</li>
-                <li><strong>3D Grid-based Placement & Spatial Math:</strong> Xử lý chuyển đổi tọa độ không gian (WorldToCell / CellToWorldCenter) và Occupancy Matrix cho công trình kích thước 1x1 đến 20 ô kết hợp URP Ghost Preview Shader.</li>
-                <li><strong>Tối ưu hóa Mobile & UI Toolkit:</strong> Hạn chế phân bổ bộ nhớ rác (GC Alloc) theo khung hình, điều tiết tần suất cập nhật TextMesh định kỳ 0.25s, thiết lập giao diện tương thích vùng hiển thị an toàn (Safe Area).</li>
-              </ul>
-            </div>
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động hóa quá trình sinh hàng trăm Asset dữ liệu cây trồng và vật phẩm chỉ với 1 click.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Mô phỏng Tiến trình Offline (Unix Wall-Clock):</strong> Tính toán tiến độ sinh trưởng nông trại khi thoát game (Catch-up logic) dựa trên chênh lệch Unix Epoch mà không duy trì tiến trình nền gây hao pin.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Toán học Không gian & 3D Grid Placement:</strong> Xử lý chuyển đổi tọa độ (WorldToCell / CellToWorldCenter) và Occupancy Matrix cho công trình kích thước đa dạng (1x1 đến 20 ô) kết hợp URP Ghost Preview Shader bán trong suốt.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Tối ưu hóa Hiệu năng Mobile:</strong> Kiểm soát Zero GC Alloc mỗi frame, điều tiết chu kỳ làm mới TextMesh (0.25s) và xây dựng giao diện tương thích vùng hiển thị an toàn (Mobile Safe Area).
+                      </li>
+                    </ul>
+                  </div>
 
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 3D (URP)</span>
-              <span class="tag">UI Toolkit (UXML/USS)</span>
-              <span class="tag">3D Grid Placement</span>
-              <span class="tag">Custom Editor Tools</span>
-              <span class="tag">Unix Offline Catch-up</span>
-              <span class="tag">Mobile Safe Area</span>
+                  <div class="card-actions">
+                    <a href="https://youtu.be/jS0IoS0HUss" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://github.com/Lam-Phong-Tech/y-wonder-land" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-github-logo"></i>
+                      <span>Mã nguồn (GitHub)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1THiF6xgpZSp_bmnNBV0KKXZvgJmNnBen?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-download-simple"></i>
+                      <span>Tải game (Drive)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </article>
 
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/jS0IoS0HUss" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://github.com/Lam-Phong-Tech/y-wonder-land" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-github-logo"></i>
-                <span>Mã nguồn (GitHub)</span>
-              </a>
-              <a href="https://drive.google.com/drive/folders/1THiF6xgpZSp_bmnNBV0KKXZvgJmNnBen?usp=drive_link" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-download-simple"></i>
-                <span>Tải game (Google Drive)</span>
-              </a>
-            </div>
-          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 2: INDEPENDENT & COMPETITION PROJECTS (TIER 2)
+           ==================================================================== -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-label">Dự án Độc lập & Cuộc thi</h2>
+          <span class="section-count">4 Projects</span>
         </div>
 
-        <!-- CARD 3: THÀNH LŨY VIỆT -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#181822] border-b border-[#272732] rounded-t-[5px]">
-            <img src="assets/images/ThanhLuyViet.jpg" alt="Thành Lũy Việt" class="w-full h-full object-cover object-center" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag bg-[#272735] text-white">Đề tài Cuộc thi</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+        <div class="grid-compact">
+
+          <!-- CARD 3: THÀNH LŨY VIỆT -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-compact">
+              <img src="assets/images/ThanhLuyViet.jpg" alt="Thành Lũy Việt" loading="lazy" />
+            </div>
+
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category">Đề tài Cuộc thi</span>
+                <div class="meta-date-index">
                   <span>06/2025 – 08/2025</span>
                   <span>·</span>
                   <span>#03</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Thành Lũy Việt</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi thể loại Tower Defense 2D gồm 10 chiến dịch. Triển khai cơ chế định vị/nâng cấp tháp, đạn đạo, bẫy chiến thuật AOE và quản lý dữ liệu bằng ScriptableObject.
+
+              <h3 class="card-title">Thành Lũy Việt</h3>
+              <p class="card-desc">
+                Trò chơi Tower Defense 2D lịch sử gồm 10 chiến dịch. Triển khai cơ chế định vị/nâng cấp tháp, tính toán đạn đạo, bẫy chiến thuật AOE và quản lý dữ liệu bằng ScriptableObject.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">Gameplay & Mechanics</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech:</span>
+                  <span class="spec-value">Unity 2D · ScriptableObject Data-Driven · AOE Physics</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">Gameplay & Mechanics Programmer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Gameplay & Core Mechanics Programmer:</strong> Lập trình hệ thống Đặt tháp & Menu tương tác ngữ cảnh (Nâng cấp Lv1→3, Hủy tháp giải phóng ô đất), Hệ thống Tác chiến tháp (quét mục tiêu, Fire Rate, đạn bay va chạm), Kẻ địch & Đợt tấn công theo Waypoints (Mathf.Atan2), Hệ thống Bẫy chiến thuật (Bẫy mìn AOE, Bẫy chông) và Module dữ liệu 10 chiến dịch.
-              </p>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Lập trình hệ thống Đặt tháp & Menu tương tác ngữ cảnh (Nâng cấp Lv1→3, Hủy tháp hoàn ô đất), Tác chiến tháp (quét mục tiêu, Fire Rate, va chạm đạn), Kẻ địch & Đợt tấn công Waypoints (Mathf.Atan2), Hệ thống Bẫy mìn/chông AOE và Dữ liệu 10 chiến dịch.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>Kiến trúc Data-Driven (ScriptableObject):</strong> Tách biệt toàn bộ cấu hình tháp, kẻ địch, đợt quái (WaveConfigSO) và bẫy ra khỏi mã nguồn để cân bằng trực tiếp trên Editor.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Ánh xạ World Space sang Screen Space:</strong> Định vị menu nâng cấp tháp chính xác từ tọa độ thế giới sang Canvas giao diện, áp dụng Mathf.Clamp chống tràn viền màn hình.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Vật lý 2D & Sát thương Diện rộng:</strong> Ứng dụng Physics2D.OverlapCircleAll xử lý vụ nổ bẫy mìn và bẫy chông làm chậm kẻ địch theo thời gian thực.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-actions">
+                    <a href="https://youtu.be/u7bke6Jkrcc" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://github.com/Nhieenn/ThanhLuyViet" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-github-logo"></i>
+                      <span>Mã nguồn (GitHub)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 4: MERGE FRUIT 3D -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-compact">
+              <img src="assets/images/MergeFruit.png" alt="Merge Fruit 3D" loading="lazy" />
             </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Data-Driven Architecture (ScriptableObject):</strong> Tách biệt cấu hình tháp (TowerData), kẻ địch (EnemyData), đợt quái (WaveConfigSO) và bẫy (TrapData) ra khỏi mã nguồn để hiệu chỉnh thông số trực tiếp trên Editor.</li>
-                <li><strong>World Space to Screen Space UI Matching:</strong> Ánh xạ tọa độ lựa chọn tháp từ World Space sang Screen Space, áp dụng Mathf.Clamp giới hạn vị trí hiển thị giao diện theo độ phân giải màn hình.</li>
-                <li><strong>Vật lý 2D & Sát thương AOE:</strong> Ứng dụng Physics2D.OverlapCircleAll và OnTriggerEnter2D phát hiện đối tượng và áp dụng sát thương diện rộng theo bán kính.</li>
-                <li><strong>Design Pattern (Singleton & Component-Based):</strong> Áp dụng Singleton kết hợp DontDestroyOnLoad quản lý dữ liệu qua các màn chơi; phân tách độc lập module hiển thị (Hpbar_Enemy) và module trạng thái thực thể.</li>
-              </ul>
-            </div>
-
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 2D</span>
-              <span class="tag">Tower Defense</span>
-              <span class="tag">ScriptableObject Data-Driven</span>
-              <span class="tag">AOE Physics2D</span>
-              <span class="tag">Waypoints Spawner</span>
-              <span class="tag">Singleton</span>
-            </div>
-
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/u7bke6Jkrcc" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://github.com/Nhieenn/ThanhLuyViet" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-github-logo"></i>
-                <span>Mã nguồn (GitHub)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4: MERGE FRUIT 3D -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#181822] border-b border-[#272732] rounded-t-[5px]">
-            <img src="assets/images/MergeFruit.png" alt="Merge Fruit 3D" class="w-full h-full object-cover object-center" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag">Dự án Cá nhân</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category">Dự án Cá nhân</span>
+                <div class="meta-date-index">
                   <span>02/03/2026 – 09/03/2026</span>
                   <span>·</span>
                   <span>#04</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Merge Fruit 3D</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi giải đố hợp nhất 3D mô phỏng va chạm vật lý. Tích hợp thuật toán dự đoán quỹ đạo rơi bằng Raycast và giao diện UI Toolkit.
+
+              <h3 class="card-title">Merge Fruit 3D</h3>
+              <p class="card-desc">
+                Trò chơi giải đố hợp nhất 3D mô phỏng va chạm vật lý. Tích hợp thuật toán dự đoán quỹ đạo rơi bằng Raycast, cảm biến cảnh báo tràn thùng và giao diện UI Toolkit.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">3D Physics & Gameplay</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech:</span>
+                  <span class="spec-value">Unity 3D · Rigidbody Physics · Raycast Aiming · UI Toolkit</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">Gameplay & Physics Developer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Gameplay & Physics Developer:</strong> Lập trình logic nhận diện va chạm hợp nhất đối tượng cùng cấp (Merge Evolution), cơ chế điều khiển giới hạn biên (Clamp), đường ngắm dự đoán quỹ đạo rơi (Raycast + LineRenderer), cảm biến phát hiện điều kiện kết thúc màn chơi (Hazard Sensor) và hệ thống giao diện UI Toolkit.
-              </p>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Lập trình logic nhận diện va chạm hợp nhất đối tượng cùng cấp (Merge Evolution), cơ chế điều khiển giới hạn biên (Clamp), đường ngắm quỹ đạo rơi (Raycast + LineRenderer), cảm biến Hazard Sensor và giao diện UI Toolkit.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>Vật lý 3D & Xử lý Quỹ đạo:</strong> Sử dụng Physics.Raycast kết hợp LineRenderer tính toán điểm tiếp xúc; linh hoạt chuyển đổi trạng thái isKinematic khi ngắm sang Rigidbody khi thả quả.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Vùng Cảm biến Zero GC Alloc:</strong> Quản lý danh sách thực thể qua OnTriggerEnter/Exit thay thế hàm quét FindObjects, giảm tải triệt để CPU và phân bổ rác bộ nhớ.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>UI Toolkit USS Class Animation:</strong> Phân tách logic C# và cấu trúc giao diện UXML/USS, quản lý class động kích hoạt hiệu ứng điểm số tăng lũy tiến.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-actions">
+                    <a href="https://youtu.be/oJn-49k7GLs" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://github.com/Nhieenn/Merge-Fruit-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-github-logo"></i>
+                      <span>Mã nguồn (GitHub)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-download-simple"></i>
+                      <span>Tải game (Drive)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 5: BLUE SQUARE 2D -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-compact">
+              <img src="assets/images/BlueSquare.png" alt="Blue Square 2D" loading="lazy" />
             </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Vật lý 3D & Xử lý Quỹ đạo (Raycast & Rigidbody):</strong> Sử dụng Physics.Raycast kết hợp LineRenderer tính toán điểm tiếp xúc theo thời gian thực; chuyển đổi trạng thái giữa isKinematic khi điều hướng và Rigidbody khi kích hoạt rơi tự do.</li>
-                <li><strong>Xử lý Vùng Cảm biến (Hazard Sensor Trigger):</strong> Quản lý danh sách thực thể qua OnTriggerEnter/Exit thay thế các hàm quét đối tượng định kỳ, giảm thiểu phân bổ bộ nhớ rác (GC Alloc) và tải xử lý CPU.</li>
-                <li><strong>Giao diện UI Toolkit (UXML / USS):</strong> Phân tách logic C# và cấu trúc giao diện UXML/USS, quản lý class động (AddToClassList) kích hoạt hiệu ứng hiển thị điểm số.</li>
-                <li><strong>Kiến trúc Singleton & Luồng thực thi:</strong> Áp dụng mô hình Singleton cho các lớp quản lý (GameManager, UIManager, ScoreManager); sử dụng Coroutine đồng bộ vòng đời khởi tạo UIDocument nhằm phòng tránh xung đột thứ tự thực thi (race conditions).</li>
-              </ul>
-            </div>
-
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 3D</span>
-              <span class="tag">Rigidbody Physics</span>
-              <span class="tag">Raycast LineRenderer</span>
-              <span class="tag">UI Toolkit (UXML/USS)</span>
-              <span class="tag">Zero GC Hazard Sensor</span>
-              <span class="tag">Singleton Pattern</span>
-            </div>
-
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/oJn-49k7GLs" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://github.com/Nhieenn/Merge-Fruit-1" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-github-logo"></i>
-                <span>Mã nguồn (GitHub)</span>
-              </a>
-              <a href="https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-download-simple"></i>
-                <span>Tải game (Google Drive)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 5: BLUE SQUARE 2D -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#181822] border-b border-[#272732] rounded-t-[5px]">
-            <img src="assets/images/BlueSquare.png" alt="Blue Square 2D" class="w-full h-full object-cover object-center" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag">Dự án Cá nhân</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category">Dự án Cá nhân</span>
+                <div class="meta-date-index">
                   <span>12/03/2026 – 15/03/2026</span>
                   <span>·</span>
                   <span>#05</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Blue Square 2D</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi thể loại Endless Runner / Platformer 2D. Ứng dụng Generic Object Pooling, cơ chế điều khiển Coyote Time, Jump Buffering và chuyển đổi giao diện động (Dynamic Theme).
+
+              <h3 class="card-title">Blue Square 2D</h3>
+              <p class="card-desc">
+                Trò chơi Endless Runner / Platformer 2D. Ứng dụng Generic Object Pooling, cơ chế điều khiển Coyote Time, Jump Buffering và thuật toán chuyển đổi màu môi trường động theo điểm số.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">Gameplay & Systems</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech:</span>
+                  <span class="spec-value">Generic Object Pooling · Coyote Time · Jump Buffer · Color.Lerp</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">Gameplay & Systems Developer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Unity Gameplay & Systems Developer:</strong> Lập trình cơ chế di chuyển và nhảy (Coyote Time, Jump Buffering), tiếp nhận điều khiển đa thiết bị qua Unity New Input System. Xây dựng ThemeManager xử lý chuyển đổi màu sắc môi trường theo mốc điểm, điều tiết biến thiên tốc độ (gameSpeed) và hiệu ứng rung máy quay (Cinemachine Impulse).
-              </p>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Lập trình cơ chế di chuyển và nhảy (Coyote Time, Jump Buffering), tiếp nhận điều khiển đa thiết bị qua New Input System, xây dựng ThemeManager đổi màu môi trường và tích hợp Cinemachine Impulse rung máy quay.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng ObjectPool Dictionary quản lý chướng ngại vật, triệt tiêu việc Instantiate/Destroy liên tục, loại bỏ đỉnh phát sinh phân bổ rác (GC Spike).
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Tối ưu hóa Cảm giác Điều khiển (Platformer Feel):</strong> Xử lý độ nhạy điều khiển qua thời gian cho phép nhảy ngoài biên (Coyote Time) và bộ đệm lệnh nhảy (Jump Buffer Time).
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Chu trình Màu Động (Dynamic Color Cycle):</strong> Sử dụng Color.Lerp nội suy màu sắc theo mốc điểm, đồng bộ liền mạch Camera Background, Sprite Renderers và Particle Systems.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="card-actions">
+                    <a href="https://youtu.be/9lwIQXOVJlQ" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://github.com/Nhieenn/Blue-Square" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-github-logo"></i>
+                      <span>Mã nguồn (GitHub)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-download-simple"></i>
+                      <span>Tải game (Drive)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 6: FLAPPY BAT -->
+          <article class="project-card" onclick="toggleProject(this)">
+            <div class="card-media-compact card-media-contain">
+              <img src="assets/images/FlappyBat.png" alt="Flappy Bat" loading="lazy" />
             </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng UnityEngine.Pool.ObjectPool dạng Generic Dictionary quản lý chướng ngại vật, thay thế việc khởi tạo và hủy đối tượng (Instantiate/Destroy) liên tục, hạn chế phát sinh đỉnh phân bổ bộ nhớ rác (GC Spike).</li>
-                <li><strong>Xử lý Độ trễ Điều khiển (Coyote Time & Jump Buffer):</strong> Xử lý độ nhạy điều khiển thông qua tính toán thời gian cho phép nhảy ngoài biên (Coyote Time) và bộ nhớ đệm lệnh nhảy (Jump Buffer Time).</li>
-                <li><strong>Dynamic Color Cycle (Color.Lerp / HDR):</strong> Sử dụng thuật toán nội suy màu (Color.Lerp) theo mốc điểm số, đồng bộ màu sắc giữa Camera Background, Sprite Renderers và Particle Systems.</li>
-                <li><strong>Cuộn Nền Liên Tục & UI Toolkit:</strong> Xây dựng cơ chế cuộn nền lặp (Mathf.Repeat) dựa trên biên kích thước Sprite (Sprite Bounds). Thiết lập giao diện người dùng và hoạt ảnh thông báo bằng Unity UI Toolkit.</li>
-              </ul>
-            </div>
-
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 2D</span>
-              <span class="tag">Generic Object Pooling</span>
-              <span class="tag">Coyote Time & Jump Buffer</span>
-              <span class="tag">Color.Lerp Theme</span>
-              <span class="tag">UI Toolkit</span>
-              <span class="tag">Cinemachine</span>
-            </div>
-
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/9lwIQXOVJlQ" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://github.com/Nhieenn/Blue-Square" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-github-logo"></i>
-                <span>Mã nguồn (GitHub)</span>
-              </a>
-              <a href="https://drive.google.com/drive/u/0/folders/1wrBNeSvJaIHHgHVNZ3la5E97zfRFOjYf" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-download-simple"></i>
-                <span>Tải game (Google Drive)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 6: FLAPPY BAT -->
-        <div class="project-card" onclick="toggleProject(this)">
-          <div class="w-full aspect-[16/9] overflow-hidden bg-[#111116] border-b border-[#272732] rounded-t-[5px] flex items-center justify-center">
-            <img src="assets/images/FlappyBat.png" alt="Flappy Bat" class="w-full h-full object-contain p-1" loading="lazy" />
-          </div>
-          <div class="p-4 cursor-pointer flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="tag">Dự án Cá nhân</span>
-                <div class="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+            <div class="card-body">
+              <div class="card-meta-top">
+                <span class="badge-category">Dự án Cá nhân</span>
+                <div class="meta-date-index">
                   <span>05/2025 – 06/2025</span>
                   <span>·</span>
                   <span>#06</span>
                 </div>
               </div>
-              <h3 class="text-white font-semibold text-base mb-1.5">Flappy Bat</h3>
-              <p class="text-xs text-zinc-400 leading-relaxed mb-3">
-                Trò chơi thể loại Arcade 2D. Triển khai vòng đời Game Loop, Sprite Animation, cơ chế thu thập vật phẩm hồi phục và xuất bản trên Windows, Android.
+
+              <h3 class="card-title">Flappy Bat</h3>
+              <p class="card-desc">
+                Trò chơi Arcade 2D kinh điển. Triển khai hoàn chỉnh vòng đời Game Loop, Sprite Animation, thuật toán sinh ngẫu nhiên chướng ngại vật và xuất bản trên Windows, Android.
               </p>
-            </div>
-            
-            <div class="flex items-center justify-between pt-2 border-t border-[#20202a] text-xs font-mono text-zinc-400">
-              <span class="tag">2D Arcade</span>
-              <div class="flex items-center gap-1 text-[11px] text-zinc-400">
-                <span>Chi tiết & Link</span>
-                <i class="ph ph-caret-down chevron-icon transition-transform duration-200"></i>
+
+              <div class="specs-row">
+                <div class="spec-item">
+                  <span class="spec-label">Tech:</span>
+                  <span class="spec-value">Unity 2D · Procedural Spawner · Survival Timer · PlayerPrefs</span>
+                </div>
+              </div>
+
+              <div class="card-footer-trigger">
+                <span class="role-tag">Solo Developer</span>
+                <div class="toggle-indicator">
+                  <span>Chi tiết</span>
+                  <i class="ph ph-caret-down chevron-icon"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- EXPANDABLE DETAILS -->
-          <div class="details-content px-4 pb-4 border-t border-[#272732] pt-3 text-xs font-mono text-zinc-300 space-y-3 cursor-default bg-[#111116]" onclick="event.stopPropagation()">
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Vai trò & Phạm vi thực hiện:</span>
-              <p class="text-zinc-300 pl-2 leading-relaxed">
-                <strong>Solo Developer:</strong> Thiết kế và lập trình vòng đời trò chơi (Menu, Playing, Game Over, Restart), hệ thống sinh chướng ngại vật ngẫu nhiên theo chiều cao, cơ chế thu thập vật phẩm hồi phục máu, tính toán thời gian tồn tại và đóng gói đa nền tảng.
-              </p>
-            </div>
+            <!-- EXPANDABLE DETAILS -->
+            <div class="details-wrapper">
+              <div class="details-inner">
+                <div class="details-content" onclick="event.stopPropagation()">
+                  <div>
+                    <h4 class="details-section-title">Phạm vi thực hiện</h4>
+                    <p class="details-text">
+                      Thiết kế và lập trình vòng đời trò chơi (Menu, Playing, Game Over, Restart), hệ thống sinh chướng ngại vật ngẫu nhiên theo chiều cao, cơ chế thu thập vật phẩm hồi phục máu, tính toán thời gian tồn tại và đóng gói đa nền tảng.
+                    </p>
+                  </div>
 
-            <div>
-              <span class="text-zinc-400 font-semibold block mb-1">• Giải pháp kỹ thuật:</span>
-              <ul class="list-disc list-inside space-y-1.5 text-zinc-300 pl-2">
-                <li><strong>Sinh Đối tượng Ngẫu nhiên:</strong> Thiết lập thuật toán sinh chướng ngại vật ngẫu nhiên theo trục độ cao kết hợp tỷ lệ xuất hiện vật phẩm hồi phục.</li>
-                <li><strong>Hệ thống Trạng thái & Sinh tồn:</strong> Xây dựng cơ chế giảm lượng máu khi phát hiện va chạm, tăng chỉ số khi thu thập vật phẩm và theo dõi thời gian tồn tại (Survival Timer).</li>
-                <li><strong>Lưu trữ Dữ liệu Cục bộ:</strong> Lưu trữ và truy xuất điểm số cao nhất cục bộ thông qua PlayerPrefs; quản lý chuyển đổi các trạng thái trò chơi (Game States).</li>
-                <li><strong>Hoạt ảnh 2D & Giao diện Canvas:</strong> Điều khiển hoạt ảnh 2D Sprite Animator, thiết lập giao diện HUD/Menu bằng Unity uGUI Canvas và phát âm thanh phản hồi tương ứng.</li>
-              </ul>
-            </div>
+                  <div>
+                    <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
+                    <ul class="highlights-list">
+                      <li class="highlight-item">
+                        <strong>Sinh Đối tượng Ngẫu nhiên:</strong> Thuật toán sinh chướng ngại vật theo trục độ cao kết hợp phân phối tỷ lệ xuất hiện vật phẩm hồi máu ngẫu nhiên.
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Hệ thống Trạng thái & Sinh tồn:</strong> Tính toán sát thương va chạm, hồi phục sinh lực và quản lý bộ đếm thời gian sinh tồn (Survival Timer).
+                      </li>
+                      <li class="highlight-item">
+                        <strong>Lưu trữ Dữ liệu Cục bộ:</strong> Quản lý lưu trữ và truy xuất điểm số cao nhất (High Score) qua PlayerPrefs; điều khiển luồng chuyển cảnh mượt mà.
+                      </li>
+                    </ul>
+                  </div>
 
-            <div class="flex flex-wrap gap-1 pt-1">
-              <span class="tag">Unity 2D</span>
-              <span class="tag">2D Sprite Animator</span>
-              <span class="tag">uGUI Canvas</span>
-              <span class="tag">Procedural Spawning</span>
-              <span class="tag">PlayerPrefs HighScore</span>
-              <span class="tag">Android & Windows Build</span>
+                  <div class="card-actions">
+                    <a href="https://youtu.be/alanA02fs-0" target="_blank" rel="noopener noreferrer" class="btn btn-solid btn-sm">
+                      <i class="ph ph-youtube-logo"></i>
+                      <span>Xem Gameplay Video</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                    <a href="https://drive.google.com/drive/u/0/folders/17yzgNNZ0yk9-4AWSFAlgq63_19fA2_vh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                      <i class="ph ph-download-simple"></i>
+                      <span>Tải game (Drive)</span>
+                      <i class="ph ph-arrow-up-right" style="font-size: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </article>
 
-            <!-- Action Links -->
-            <div class="pt-3 border-t border-[#20202a] flex flex-wrap items-center gap-2">
-              <a href="https://youtu.be/alanA02fs-0" target="_blank" class="btn-solid !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-youtube-logo"></i>
-                <span>Xem Gameplay (YouTube)</span>
-              </a>
-              <a href="https://drive.google.com/drive/u/0/folders/17yzgNNZ0yk9-4AWSFAlgq63_19fA2_vh" target="_blank" class="btn-outline !py-1 !px-2.5 !text-[11px]">
-                <i class="ph ph-download-simple"></i>
-                <span>Tải game (Google Drive)</span>
-              </a>
-            </div>
-          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="mt-12 pt-6 border-t border-[#272732] flex items-center justify-between text-xs text-zinc-500 font-mono">
+    <footer class="footer">
       <span>Trần Đức Nhiên © 2026</span>
-      <span>Unity Game Developer</span>
+      <span>Unity Game Developer Portfolio</span>
     </footer>
 
   </div>
 
-  <!-- SCRIPT EXPAND / COLLAPSE -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     function toggleProject(cardElement) {
       cardElement.classList.toggle('active');
@@ -608,9 +606,10 @@
       const email = 'ducnhiendz2006@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         const textSpan = document.getElementById('copyText');
-        textSpan.innerText = 'Đã sao chép!';
+        const originalText = textSpan.innerText;
+        textSpan.innerText = 'Đã sao chép email!';
         setTimeout(() => {
-          textSpan.innerText = 'Sao chép email';
+          textSpan.innerText = originalText;
         }, 2000);
       });
     }

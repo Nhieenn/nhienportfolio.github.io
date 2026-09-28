@@ -566,8 +566,13 @@ a {
 
 .details-text {
   line-height: 1.65;
-  color: #c0c0cc;
+  color: var(--text-secondary);
   padding-left: 2px;
+}
+
+.details-text strong {
+  font-weight: 400;
+  color: var(--text-primary);
 }
 
 .highlights-list {
@@ -582,7 +587,7 @@ a {
   position: relative;
   padding-left: 14px;
   line-height: 1.6;
-  color: #c0c0cc;
+  color: var(--text-secondary);
 }
 
 .highlight-item::before {
@@ -594,8 +599,8 @@ a {
 }
 
 .highlight-item strong {
-  color: var(--text-accent);
-  font-weight: 600;
+  color: var(--text-primary);
+  font-weight: 400;
 }
 
 /* Action Links in Details */

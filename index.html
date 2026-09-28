@@ -106,7 +106,7 @@
                   <div>
                     <h4 class="details-section-title">Phạm vi thực hiện</h4>
                     <p class="details-text">
-                      Thiết kế và lập trình hoàn chỉnh hệ thống Client UI (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss Flow, HUD, Interactive Tutorial) bằng <strong>Unity 6 UI Toolkit (UXML + USS + C#)</strong>. Tích hợp module xác thực ngầm Firebase Auth trong quy trình nạp dữ liệu.
+                      Thiết kế và lập trình hoàn chỉnh hệ thống Client UI (Main Menu, Loadout & Upgrade, Shop, Daily Quests, Settings, Pause, Game Over/Win-Loss Flow, HUD, Interactive Tutorial) bằng Unity 6 UI Toolkit (UXML + USS + C#). Tích hợp module xác thực ngầm Firebase Auth trong quy trình nạp dữ liệu.
                     </p>
                   </div>
 
@@ -114,13 +114,13 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>Tối ưu hóa UI Rendering:</strong> Kết hợp UI Toolkit Auto-Batching và Sprite Atlas, cô lập chuyển động trên GPU Matrix Transform; giảm tải từ 40–80 lệnh vẽ xuống <strong>3–5 Draw Calls/màn hình</strong>, giải phóng CPU và duy trì 60 FPS.
+                        Tối ưu hóa UI Rendering: Kết hợp UI Toolkit Auto-Batching và Sprite Atlas, cô lập chuyển động trên GPU Matrix Transform; giảm tải từ 40–80 lệnh vẽ xuống 3–5 Draw Calls/màn hình, giải phóng CPU và duy trì 60 FPS.
                       </li>
                       <li class="highlight-item">
-                        <strong>Kiến trúc Event-Driven (EventBus):</strong> Xây dựng kênh điều phối sự kiện phân tán giữa UI, Gameplay, Audio và Quests; loại bỏ hoàn toàn tham chiếu trực tiếp ([SerializeField] / FindObject), triệt tiêu lỗi NullReferenceException.
+                        Kiến trúc Event-Driven (EventBus): Xây dựng kênh điều phối sự kiện phân tán giữa UI, Gameplay, Audio và Quests; loại bỏ hoàn toàn tham chiếu trực tiếp ([SerializeField] / FindObject), triệt tiêu lỗi NullReferenceException.
                       </li>
                       <li class="highlight-item">
-                        <strong>Hệ thống Bản địa hóa 5 Ngôn ngữ:</strong> Nạp từ điển JSON thời gian thực (Việt, Anh, Tây Ban Nha, Nhật, Trung). Xử lý vỡ layout chữ tượng hình CJK bằng Flexbox và Dynamic SDF Font Atlas; tích hợp Fallback Chain sang tiếng Anh khi mất kết nối mạng.
+                        Hệ thống Bản địa hóa 5 Ngôn ngữ: Nạp từ điển JSON thời gian thực (Việt, Anh, Tây Ban Nha, Nhật, Trung). Xử lý vỡ layout chữ tượng hình CJK bằng Flexbox và Dynamic SDF Font Atlas; tích hợp Fallback Chain sang tiếng Anh khi mất kết nối mạng.
                       </li>
                     </ul>
                   </div>
@@ -203,16 +203,16 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>ScriptableObject & Custom Editor Tooling:</strong> Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động hóa quá trình sinh hàng trăm Asset dữ liệu cây trồng và vật phẩm chỉ với 1 click.
+                        ScriptableObject & Custom Editor Tooling: Viết công cụ mở rộng Unity Editor (CropDataGenerator, ItemDataGenerator) tự động hóa quá trình sinh hàng trăm Asset dữ liệu cây trồng và vật phẩm chỉ với 1 click.
                       </li>
                       <li class="highlight-item">
-                        <strong>Mô phỏng Tiến trình Offline (Unix Wall-Clock):</strong> Tính toán tiến độ sinh trưởng nông trại khi thoát game (Catch-up logic) dựa trên chênh lệch Unix Epoch mà không duy trì tiến trình nền gây hao pin.
+                        Mô phỏng Tiến trình Offline (Unix Wall-Clock): Tính toán tiến độ sinh trưởng nông trại khi thoát game (Catch-up logic) dựa trên chênh lệch Unix Epoch mà không duy trì tiến trình nền gây hao pin.
                       </li>
                       <li class="highlight-item">
-                        <strong>Toán học Không gian & 3D Grid Placement:</strong> Xử lý chuyển đổi tọa độ (WorldToCell / CellToWorldCenter) và Occupancy Matrix cho công trình kích thước đa dạng (1x1 đến 20 ô) kết hợp URP Ghost Preview Shader bán trong suốt.
+                        Toán học Không gian & 3D Grid Placement: Xử lý chuyển đổi tọa độ (WorldToCell / CellToWorldCenter) và Occupancy Matrix cho công trình kích thước đa dạng (1x1 đến 20 ô) kết hợp URP Ghost Preview Shader bán trong suốt.
                       </li>
                       <li class="highlight-item">
-                        <strong>Tối ưu hóa Hiệu năng Mobile:</strong> Kiểm soát Zero GC Alloc mỗi frame, điều tiết chu kỳ làm mới TextMesh (0.25s) và xây dựng giao diện tương thích vùng hiển thị an toàn (Mobile Safe Area).
+                        Tối ưu hóa Hiệu năng Mobile: Kiểm soát Zero GC Alloc mỗi frame, điều tiết chu kỳ làm mới TextMesh (0.25s) và xây dựng giao diện tương thích vùng hiển thị an toàn (Mobile Safe Area).
                       </li>
                     </ul>
                   </div>
@@ -305,13 +305,13 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>Kiến trúc Data-Driven (ScriptableObject):</strong> Tách biệt toàn bộ cấu hình tháp, kẻ địch, đợt quái (WaveConfigSO) và bẫy ra khỏi mã nguồn để cân bằng trực tiếp trên Editor.
+                        Kiến trúc Data-Driven (ScriptableObject): Tách biệt toàn bộ cấu hình tháp, kẻ địch, đợt quái (WaveConfigSO) và bẫy ra khỏi mã nguồn để cân bằng trực tiếp trên Editor.
                       </li>
                       <li class="highlight-item">
-                        <strong>Ánh xạ World Space sang Screen Space:</strong> Định vị menu nâng cấp tháp chính xác từ tọa độ thế giới sang Canvas giao diện, áp dụng Mathf.Clamp chống tràn viền màn hình.
+                        Ánh xạ World Space sang Screen Space: Định vị menu nâng cấp tháp chính xác từ tọa độ thế giới sang Canvas giao diện, áp dụng Mathf.Clamp chống tràn viền màn hình.
                       </li>
                       <li class="highlight-item">
-                        <strong>Vật lý 2D & Sát thương Diện rộng:</strong> Ứng dụng Physics2D.OverlapCircleAll xử lý vụ nổ bẫy mìn và bẫy chông làm chậm kẻ địch theo thời gian thực.
+                        Vật lý 2D & Sát thương Diện rộng: Ứng dụng Physics2D.OverlapCircleAll xử lý vụ nổ bẫy mìn và bẫy chông làm chậm kẻ địch theo thời gian thực.
                       </li>
                     </ul>
                   </div>
@@ -385,13 +385,13 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>Vật lý 3D & Xử lý Quỹ đạo:</strong> Sử dụng Physics.Raycast kết hợp LineRenderer tính toán điểm tiếp xúc; linh hoạt chuyển đổi trạng thái isKinematic khi ngắm sang Rigidbody khi thả quả.
+                        Vật lý 3D & Xử lý Quỹ đạo: Sử dụng Physics.Raycast kết hợp LineRenderer tính toán điểm tiếp xúc; linh hoạt chuyển đổi trạng thái isKinematic khi ngắm sang Rigidbody khi thả quả.
                       </li>
                       <li class="highlight-item">
-                        <strong>Vùng Cảm biến Zero GC Alloc:</strong> Quản lý danh sách thực thể qua OnTriggerEnter/Exit thay thế hàm quét FindObjects, giảm tải triệt để CPU và phân bổ rác bộ nhớ.
+                        Vùng Cảm biến Zero GC Alloc: Quản lý danh sách thực thể qua OnTriggerEnter/Exit thay thế hàm quét FindObjects, giảm tải triệt để CPU và phân bổ rác bộ nhớ.
                       </li>
                       <li class="highlight-item">
-                        <strong>UI Toolkit USS Class Animation:</strong> Phân tách logic C# và cấu trúc giao diện UXML/USS, quản lý class động kích hoạt hiệu ứng điểm số tăng lũy tiến.
+                        UI Toolkit USS Class Animation: Phân tách logic C# và cấu trúc giao diện UXML/USS, quản lý class động kích hoạt hiệu ứng điểm số tăng lũy tiến.
                       </li>
                     </ul>
                   </div>
@@ -470,13 +470,13 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>Generic Object Pooling (UnityEngine.Pool):</strong> Áp dụng ObjectPool Dictionary quản lý chướng ngại vật, triệt tiêu việc Instantiate/Destroy liên tục, loại bỏ đỉnh phát sinh phân bổ rác (GC Spike).
+                        Generic Object Pooling (UnityEngine.Pool): Áp dụng ObjectPool Dictionary quản lý chướng ngại vật, triệt tiêu việc Instantiate/Destroy liên tục, loại bỏ đỉnh phát sinh phân bổ rác (GC Spike).
                       </li>
                       <li class="highlight-item">
-                        <strong>Tối ưu hóa Cảm giác Điều khiển (Platformer Feel):</strong> Xử lý độ nhạy điều khiển qua thời gian cho phép nhảy ngoài biên (Coyote Time) và bộ đệm lệnh nhảy (Jump Buffer Time).
+                        Tối ưu hóa Cảm giác Điều khiển (Platformer Feel): Xử lý độ nhạy điều khiển qua thời gian cho phép nhảy ngoài biên (Coyote Time) và bộ đệm lệnh nhảy (Jump Buffer Time).
                       </li>
                       <li class="highlight-item">
-                        <strong>Chu trình Màu Động (Dynamic Color Cycle):</strong> Sử dụng Color.Lerp nội suy màu sắc theo mốc điểm, đồng bộ liền mạch Camera Background, Sprite Renderers và Particle Systems.
+                        Chu trình Màu Động (Dynamic Color Cycle): Sử dụng Color.Lerp nội suy màu sắc theo mốc điểm, đồng bộ liền mạch Camera Background, Sprite Renderers và Particle Systems.
                       </li>
                     </ul>
                   </div>
@@ -555,13 +555,13 @@
                     <h4 class="details-section-title">Giải pháp kỹ thuật nổi bật</h4>
                     <ul class="highlights-list">
                       <li class="highlight-item">
-                        <strong>Sinh Đối tượng Ngẫu nhiên:</strong> Thuật toán sinh chướng ngại vật theo trục độ cao kết hợp phân phối tỷ lệ xuất hiện vật phẩm hồi máu ngẫu nhiên.
+                        Sinh Đối tượng Ngẫu nhiên: Thuật toán sinh chướng ngại vật theo trục độ cao kết hợp phân phối tỷ lệ xuất hiện vật phẩm hồi máu ngẫu nhiên.
                       </li>
                       <li class="highlight-item">
-                        <strong>Hệ thống Trạng thái & Sinh tồn:</strong> Tính toán sát thương va chạm, hồi phục sinh lực và quản lý bộ đếm thời gian sinh tồn (Survival Timer).
+                        Hệ thống Trạng thái & Sinh tồn: Tính toán sát thương va chạm, hồi phục sinh lực và quản lý bộ đếm thời gian sinh tồn (Survival Timer).
                       </li>
                       <li class="highlight-item">
-                        <strong>Lưu trữ Dữ liệu Cục bộ:</strong> Quản lý lưu trữ và truy xuất điểm số cao nhất (High Score) qua PlayerPrefs; điều khiển luồng chuyển cảnh mượt mà.
+                        Lưu trữ Dữ liệu Cục bộ: Quản lý lưu trữ và truy xuất điểm số cao nhất (High Score) qua PlayerPrefs; điều khiển luồng chuyển cảnh mượt mà.
                       </li>
                     </ul>
                   </div>
